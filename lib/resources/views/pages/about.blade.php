@@ -2,16 +2,23 @@
 
 @section('content')
     
-        <h1>About us</h1>
         <div class="container">
-            <p>See gradients were super played out back in the early web days, but now they’re so ubiquitous that you’d be remiss not to drop them in your site, interface, or next hair dye job.
-
-Also, I'm part of a group of makers with a mission to build a better internet, one digital project at a time. One of our recent project launches is Cool Backgrounds another free design tool to generate background wallpaper for websites, blogs and phones.</p>
+            <h1 style="font-weight:bold">About us</h1>
+            <hr style="border-top: 3px solid #bbb;">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>We create a website for student in Ton Duc Thang University to find an IT job from many companies. Companies can aslo so post their requirement about the job. Therefore, student can access to this website to apply the job that they find attractive.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img style="width:100%" src="https://www.topitworks.com/blogs/wp-content/uploads/2017/11/IT-job-610x400.jpg">
+                </div>
+            </div>
         </div>
 
-        <h1 style="text-align: center;">Group Members</h1>
-        <hr style="border-top: 3px solid #bbb;">
-        <div class="container">
+        
+        <div class="container" style="margin-top:40px">
+            <h1 style="text-align: center; font-weight:bold">Group Members</h1>
+            <hr style="border-top: 3px solid #bbb;">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="card">
