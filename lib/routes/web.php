@@ -18,10 +18,18 @@ Route::group(['namespace'=>'Company'],function(){
         Route::get('/','ComLoginController@getLogin');
         Route::post('/','ComLoginController@postLogin');
     });
+
     Route::get('logout','ComHomeController@getLogout');
+    //Route for home, list-job
     Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut'], function(){
         Route::get('home','ComHomeController@getHome');
+        Route::group(['prefix'=>'listjob'], function(){
+            Route::get('/','ComListJobController@getListJob');
+        });
+      
     });
+
+   
     Route::group(['prefix'=>'register'],function(){
         Route::get('/','ComRegisterController@getRegister');
         Route::post('/','ComRegisterController@postRegister');
