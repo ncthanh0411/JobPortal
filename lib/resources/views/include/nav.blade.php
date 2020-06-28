@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center sticky-top">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center sticky-top" style="background: linear-gradient(to left, #0062E6, #33AEFF);">
     <!-- Brand/logo -->
     
         <a class="navbar-brand lefts" href="{{asset('/')}}">JobWork</a>
@@ -23,7 +23,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{asset('/login')}}">Login</a>
             </li>
-
         </ul>
    
 </nav>

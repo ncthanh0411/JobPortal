@@ -3,8 +3,8 @@
 @section('content')
     <h1> Jobs</h1>
     <div class='chobao'>
-        @if (count($jobs) > 1)
-            @foreach ($jobs as $job)
+        @if (count($jobss) > 1)
+            @foreach ($jobss as $job)
                 <div class = "well">
                     <h3> <a href="{{asset('jobs/'.$job->id)}}"> {{$job->title}}</h3></a>
                     <p>{{$job->Job_description}}</p>
