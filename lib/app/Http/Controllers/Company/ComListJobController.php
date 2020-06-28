@@ -15,4 +15,8 @@ class ComListJobController extends Controller
         return view('backend.listjobs')->with('data',$data);
     }
 
+    public function addJob(){
+        return view('backend.addjobs');
+    }
+
 }

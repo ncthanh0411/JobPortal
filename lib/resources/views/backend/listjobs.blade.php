@@ -27,7 +27,7 @@
 					<div class="panel-body">
 						<div class="bootstrap-table">
 							<div class="table-responsive">
-								<a href="#" class="btn btn-primary">Add jobs</a>
+								<a href= "{{asset('admin/listjob/addJob')}}" class="btn btn-primary">Add jobs</a>
 								<table class="table table-bordered" style="margin-top:20px;">				
 									<thead>
 										<tr class="bg-primary">
