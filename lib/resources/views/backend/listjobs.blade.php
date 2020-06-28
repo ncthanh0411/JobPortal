@@ -42,83 +42,21 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>1</td>
-											<td>Senior Fullstack Developer (Java,Spring)</td>											</td>
-											<td>30.000.000 VND</td>
-											<td>10</td>
-											<td>Fullstack</td>
-											<td>wait</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-											</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>Senior Fullstack Developer (Java,Spring)</td>
-											<td>30.000.000 VND</td>
-											<td>10</td>
-											<td>Fullstack</td>
-											<td>wait</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-											</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>Senior Fullstack Developer (Java,Spring)</td>
-											<td>30.000.000 VND</td>
-											<td>10</td>
-											<td>Fullstack</td>
-											<td>wait</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-											</td>
-										</tr>
-										<tr>
-											<td>4</td>
-											<td>Senior Fullstack Developer (Java,Spring)</td>
-											<td>30.000.000 VND</td>
-											<td>10</td>
-											<td>Fullstack</td>
-											<td>wait</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-											</td>
-											
-										</tr>
-										<tr>
-											<td>5</td>
-											<td>Senior Fullstack Developer (Java,Spring)</td>
-											<td>30.000.000 VND</td>
-											
-											<td>10</td>
-											<td>Fullstack</td>
-											<td>wait</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-											</td>
-											
-										</tr>
-										<tr>
-											<td>6</td>
-											<td>Senior Fullstack Developer (Java,Spring)</td>
-											<td>30.000.000 VND</td>
-											
-											<td>10</td>
-											<td>Fullstack</td>
-											<td>wait</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-											</td>
-											
-										</tr>
+										
+										@foreach ($data as $job)
+											<tr>
+												<td>{{$job->title}}</td>
+												<td>{{$job->Job_description}}</td>											</td>
+												<td>{{$job->Salary}}</td>
+												<td>{{$job->Expired_date}}</td>
+												<td>Fullstack</td>
+												<td>{{$job->status}}</td>
+												<td>
+													<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+													<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+												</td>
+											</tr>
+										@endforeach	
 									</tbody>
 								</table>							
 							</div>

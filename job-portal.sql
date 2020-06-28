@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2020 at 10:33 AM
+-- Generation Time: Jun 28, 2020 at 12:09 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -109,6 +109,18 @@ CREATE TABLE `jobs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `jobs`
+--
+
+INSERT INTO `jobs` (`id`, `title`, `Salary`, `Job_description`, `Requirement`, `Expired_date`, `Status`, `company_id`, `categories_id`, `created_at`, `updated_at`) VALUES
+(1, 'Job1', 1000, 'This is description for job1', 'greater than 3 years experience', 'Unlimited', 0, 2, 1, '2020-06-28 03:07:13', '2020-06-28 03:07:13'),
+(2, 'Job2', 1000, 'This is description for job1', 'greater than 3 years experience', 'Unlimited', 0, 2, 2, '2020-06-28 03:07:42', '2020-06-28 03:07:42'),
+(3, 'Job3', 2000, 'This is description for job3', 'greater than 3 years experience', 'Unlimited', 0, 2, 3, '2020-06-28 03:08:05', '2020-06-28 03:08:05'),
+(4, 'Job4', 2000, 'This is description for job3', 'greater than 3 years experience', 'Unlimited', 0, 3, 1, '2020-06-28 03:08:20', '2020-06-28 03:08:20'),
+(5, 'Job4', 2000, 'This is description for job3', 'greater than 3 years experience', 'Unlimited', 0, 3, 2, '2020-06-28 03:08:30', '2020-06-28 03:08:30'),
+(6, 'Job5', 2000, 'This is description for job3', 'greater than 3 years experience', 'Unlimited', 0, 3, 3, '2020-06-28 03:08:41', '2020-06-28 03:08:41');
+
 -- --------------------------------------------------------
 
 --
@@ -188,6 +200,13 @@ CREATE TABLE `students` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`id`, `email`, `password`, `name`, `phone`, `major`, `CV`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'ncthanh0411@gmail.com', '123456', 'Nguyễn Công Thành', '0907986613', 'Software engineering', 'none', NULL, '2020-06-27 17:00:00', '2020-06-27 17:00:00');
 
 -- --------------------------------------------------------
 
@@ -299,7 +318,7 @@ ALTER TABLE `company_users`
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `manage_applies`
@@ -317,7 +336,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
