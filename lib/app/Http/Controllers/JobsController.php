@@ -16,7 +16,7 @@ class JobsController extends Controller
     {
         $jobs = Jobs::orderBy('title','desc')->get();
         
-        return view('jobs.index')->with('jobs',$jobs);
+        return view('jobs.index')->with('jobss',$jobs);
     }
 
     /**
