@@ -16,14 +16,21 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('Locate');
             $table->integer('Salary');
-            $table->text('Job description');
+            $table->text('Job_description');
             $table->text('Requirement');
-            $table->string('Expired date');
-            $table->string('Status');
-            $table->integer('User ID');
-            $table->integer('Category ID');
+            $table->string('Expired_date');
+            $table->integer('Status')->default(0);
+            
+            $table->unsignedBigInteger('company_id')->unsigned();
+            $table->foreign('company_id')
+                  ->references('id')
+                  ->on('company_users');
+
+            $table->unsignedBigInteger('categories_id')->unsigned();
+            $table->foreign('categories_id')
+                  ->references('id')
+                  ->on('categories');
             $table->timestamps();
         });
     }

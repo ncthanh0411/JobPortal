@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CompanyUser extends Migration
+class CreateCompanyUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,18 +14,16 @@ class CompanyUser extends Migration
     public function up()
     {
         Schema::create('company_users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('username');
-            $table->string('email');
+            $table->string('companyname');
+            $table->string('email')->unique();
             $table->string('password');
             $table->string('phone');
-            $table->string('companyname');
             $table->string('location');
-            $table->string('introduction');
+            $table->text('introduction');
             $table->string('logo');
             $table->rememberToken();
-
-
             $table->timestamps();
         });
     }

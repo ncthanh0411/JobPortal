@@ -7,8 +7,8 @@
             @foreach ($jobss as $job)
                 <div class = "well">
                     <h3> <a href="{{asset('jobs/'.$job->id)}}"> {{$job->title}}</h3></a>
-                    <p>{{$job["Job description"]}}</p>
-                    <p>Expired date: {{$job["Expired date"]}}</p>
+                    <p>{{$job->Job_description}}</p>
+                    <p>Expired date: {{$job->Expired_date}}</p>
                     <p>{{$job->Salary}}</p>
                 </div>
             @endforeach
