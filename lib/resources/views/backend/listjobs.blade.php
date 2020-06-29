@@ -16,7 +16,7 @@
 					<div class="panel-body">
 						<div class="bootstrap-table">
 							<div class="table-responsive">
-								<a href= "{{asset('admin/listjob/addJob')}}" class="btn btn-primary">Add jobs</a>
+								<a href= "{{asset('company/listjob/addJob')}}" class="btn btn-primary">Add jobs</a>
 								<table class="table table-bordered" style="margin-top:20px;">				
 									<thead>
 										<tr class="bg-primary">
@@ -34,11 +34,22 @@
 										
 										@foreach ($data as $job)
 											<tr>
-												<td>{{$job->title}}</td>
-												<td>{{$job->Job_description}}</td>											</td>
+												<td>{!!$job->title!!}</td>
+												<td>{!!$job->Job_description!!}</td>											</td>
 												<td>{{$job->Salary}}</td>
 												<td>{{$job->Expired_date}}</td>
-												<td>Fullstack</td>
+												@if ($job->categories_id == 1)
+													<td>Java</td>
+												@endif	
+												@if ($job->categories_id == 2)
+													<td>PHP</td>
+												@endif
+												@if ($job->categories_id == 3)
+													<td>Testing</td>
+												@endif
+												@if ($job->categories_id == 4)
+													<td>Python</td>
+												@endif	
 												<td>{{$job->status}}</td>
 												<td>
 													<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
@@ -47,6 +58,12 @@
 											</tr>
 										@endforeach	
 									</tbody>
+
+									@if(\Session::has('success'))
+										<div class = "alert alert-success">
+											<p> {{ Session::get('success')}}</p>
+										</div>
+									@endif
 								</table>							
 							</div>
 						</div>

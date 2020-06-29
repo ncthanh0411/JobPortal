@@ -40,12 +40,16 @@ class JobsController extends Controller
         //
     
         $jobs = new Jobs([
-            'name' => 'required',
-            'price' => 'required',
-            'description' => 'required',
-            'requirement' => 'required',
-            'ex_date' => 'required',
+            'title' => $request->get('name'),
+            'Salary' => $request->get('price'),
+            'Job_Description' => $request->get('description'),
+            'Requirement' => $request->get('requirement'),
+            'Expired_date' => $request->get('ex_date'),
+            'company_id' => auth()->user()->id,
+            'categories_id' => (int)$request->get('cate')
         ]);
+        $jobs->save();
+        return redirect() -> intended('company/listjob')->with('success','New Jobs added');
 
     }
 
