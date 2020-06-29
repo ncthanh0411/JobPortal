@@ -27,7 +27,7 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">Job addition</div>
 					<div class="panel-body">
-						<form method="post" enctype="multipart/form-data">
+						<form method="post" action = "{{url('jobs')}}" enctype="multipart/form-data">
 							<div class="row" style="margin-bottom:40px">
 								<div class="col-xs-8">
 									<div class="form-group" >
@@ -39,47 +39,26 @@
 										<input required type="number" name="price" class="form-control">
 									</div>
 									<div class="form-group" >
-										<label>Expired date</label>
-										<input required type="text" name="price" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Amount</label>
-										<input required type="number" name="accessories" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Locate</label>
-										<input required type="text" name="warranty" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Welfare</label>
-										<input required type="text" name="promotion" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Requirement</label>
-										<input required type="text" name="condition" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Trạng thái</label>
-										<select required name="status" class="form-control">
-											<option value="1">Còn hàng</option>
-											<option value="0">Hết hàng</option>
-					                    </select>
-									</div>
-									<div class="form-group" >
 										<label>Description</label>
 										<textarea required name="description"></textarea>
 									</div>
 									<div class="form-group" >
+										<label>Requirement</label>
+										<input required type="text" name="requirement" class="form-control">
+									</div>
+									
+									<div class="form-group" >
+										<label>Expired date</label>
+										<input required type="text" name="ex_date" class="form-control">
+									</div>
+								
+									<div class="form-group" >
 										<label>Category</label>
 										<select required name="cate" class="form-control">
-											<option value="1">Web developer</option>
-											<option value="2">ReacteJS developer</option>
-											<option value="3">Mobile developer</option>
-											<option value="4">.Net developer</option>
-											<option value="5">Game developer</option>
-											<option value="6">AI researcher</option>
-											<option value="7">Tester</option>
-											<option value="8">Other</option>
+											<option value="1">Java</option>
+											<option value="2">PHP</option>
+											<option value="3">Testing</option>
+											<option value="4">Python</option>
 					                    </select>
 									</div>
 									<input type="submit" name="submit" value="Add" class="btn btn-primary">

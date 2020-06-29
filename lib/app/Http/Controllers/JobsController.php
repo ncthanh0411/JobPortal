@@ -38,6 +38,15 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         //
+    
+        $jobs = new Jobs([
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'requirement' => 'required',
+            'ex_date' => 'required',
+        ]);
+
     }
 
     /**

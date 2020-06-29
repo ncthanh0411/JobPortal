@@ -12,4 +12,5 @@ class Jobs extends Model
      public $primaryKey = 'id';
      // Timestamps
      public $timestamps = true;
+
 }
