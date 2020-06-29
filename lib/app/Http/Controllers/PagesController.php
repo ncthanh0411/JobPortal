@@ -15,6 +15,10 @@ class PagesController extends Controller
         $title = 'Welcome to about!';
         return view('pages.about')->with('title',$title);
     }
+    public function choose(){
+       
+        return view('backend.chooseuser');
+    }
 
 
 }
