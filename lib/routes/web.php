@@ -26,6 +26,7 @@ Route::group(['namespace'=>'Company'],function(){
         Route::get('home','ComHomeController@getHome');
         Route::group(['prefix'=>'listjob'], function(){
             Route::get('/','ComListJobController@getListJob');
+            Route::get('/addJob','ComListJobController@addJob');
         });
         ///
         Route::group(['prefix'=>'profile'],function(){
