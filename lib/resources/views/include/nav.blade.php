@@ -22,7 +22,22 @@
         <!-- Right -->
         <ul class="navbar-nav ml-auto right" >
             <li class="nav-item">
-                <a class="nav-link" href="{{asset('/choose')}}">Login</a>
+
+                @if(isset(Auth::guard('student')->user()->id))
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        {{Auth::guard('student')->user()->name}}
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Link 1</a>
+                      <a class="dropdown-item" href="#">Link 2</a>
+                      <a class="dropdown-item" href="{{asset('logouts')}}"> Logout</a>
+                    </div>
+                </div>
+
+                @else
+                    <a class="nav-link" href="{{asset('/choose')}}">Login</a>
+                @endif
             </li>
         </ul>
    

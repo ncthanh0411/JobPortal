@@ -59,6 +59,8 @@ Route::group(['namespace'=>'Admin'],function(){
 
 //Student route-----------------------------------------------------------------
 Route::group(['namespace'=>'Student'],function(){
+    //Student logout
+    Route::get('logouts','StudentHomeController@getLogout');
     Route::group(['prefix'=>'student'],function(){
         //Student Login---------------------------------------------------------
         Route::get('/login','StudentLoginController@getLogin');
