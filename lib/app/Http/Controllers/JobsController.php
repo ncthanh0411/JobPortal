@@ -38,6 +38,19 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         //
+    
+        $jobs = new Jobs([
+            'title' => $request->get('name'),
+            'Salary' => $request->get('price'),
+            'Job_Description' => $request->get('description'),
+            'Requirement' => $request->get('requirement'),
+            'Expired_date' => $request->get('ex_date'),
+            'company_id' => auth()->user()->id,
+            'categories_id' => (int)$request->get('cate')
+        ]);
+        $jobs->save();
+        return redirect() -> intended('company/listjob')->with('success','New Jobs added');
+
     }
 
     /**
@@ -73,6 +86,7 @@ class JobsController extends Controller
     public function update(Request $request, $id)
     {
         //
+
     }
 
     /**
@@ -84,5 +98,8 @@ class JobsController extends Controller
     public function destroy($id)
     {
         //
+        $job = Jobs::find($id);
+        $job->delete();
+        return back();
     }
 }

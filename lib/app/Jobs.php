@@ -12,4 +12,6 @@ class Jobs extends Model
      public $primaryKey = 'id';
      // Timestamps
      public $timestamps = true;
+     protected $fillable = ['title', 'Salary', 'Job_Description', 'Requirement', 'Expired_date', 'company_id' , 'categories_id'];
+
 }

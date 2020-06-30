@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    
+    <div class = "toan">
         <div class="container">
             <h1 style="font-weight:bold">About us</h1>
             <hr style="border-top: 3px solid #bbb;">
@@ -120,6 +120,6 @@
                 </div>
             </div>
         </div>
-    
+    </div>
     
 @endsection
