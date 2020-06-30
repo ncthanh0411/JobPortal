@@ -86,6 +86,7 @@ class JobsController extends Controller
     public function update(Request $request, $id)
     {
         //
+
     }
 
     /**
@@ -97,5 +98,8 @@ class JobsController extends Controller
     public function destroy($id)
     {
         //
+        $job = Jobs::find($id);
+        $job->delete();
+        return back();
     }
 }

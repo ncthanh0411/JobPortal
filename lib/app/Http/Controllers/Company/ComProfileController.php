@@ -20,7 +20,7 @@ class ComProfileController extends Controller
     }
 
     public function postEditComProfile(Request $request,$id){
-        $company = new User;
+        $company = new User; 
        
         $arr['username']= $request->Username;
         $arr['companyname']=$request->Companyname;

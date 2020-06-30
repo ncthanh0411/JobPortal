@@ -26,7 +26,8 @@
 											<th>Amount</th>
 											<th>Category</th>
 											<th>Status</th>
-											<th>Option</th>
+											<th>Edit</th>
+											<th>Delete</th>
 											
 										</tr>
 									</thead>
@@ -34,8 +35,8 @@
 										
 										@foreach ($data as $job)
 											<tr>
-												<td>{!!$job->title!!}</td>
-												<td>{!!$job->Job_description!!}</td>											</td>
+												<td>{!!$job->id!!}</td>
+												<td>{!!$job->title!!}</td>											</td>
 												<td>{{$job->Salary}}</td>
 												<td>{{$job->Expired_date}}</td>
 												@if ($job->categories_id == 1)
@@ -50,10 +51,23 @@
 												@if ($job->categories_id == 4)
 													<td>Python</td>
 												@endif	
-												<td>{{$job->status}}</td>
+												@if ($job->Status == 0)
+													<td style="color:red">PENDING</td>
+												
+												@else 
+													<td style="color:green">APPROVED</td>
+												@endif
 												<td>
+
 													<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-													<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+												</td>
+												<td>
+													<form  method="POST" action="{{action('JobsController@destroy',$job->id)}}">
+													{{csrf_field()}}
+													<input type="hidden" name="_method" value="DELETE">
+													<button type="submit" class="btn btn-danger"> Delete</button>
+													</form>
+													
 												</td>
 											</tr>
 										@endforeach	
