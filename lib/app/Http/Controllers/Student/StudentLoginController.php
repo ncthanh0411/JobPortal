@@ -13,8 +13,8 @@ class StudentLoginController extends Controller
     }
     public function postLogin(Request $request){
         if(Auth::guard('student')->attempt(['email'=> $request->email, 'password'=> $request->password])){
-            return redirect()->intended('/');
-            //dd('thanhcong');
+            $student_id= Auth::guard('student')->user()->id;
+            return redirect()->intended('/')->with('$Student_id',$student_id);
         }else{
             return back()->withInput()->with('error','wrong password or email!!!');
         }
