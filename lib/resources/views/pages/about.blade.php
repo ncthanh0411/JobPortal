@@ -24,7 +24,7 @@
                     <div class="card">
                         <img class="member" src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.0-9/p960x960/58825862_1098960526978522_388178740485554176_o.jpg?_nc_cat=111&_nc_sid=85a577&_nc_ohc=ed_1N7dZw-sAX81btGo&_nc_ht=scontent.fsgn3-1.fna&_nc_tp=6&oh=76e595eeb072925c69cee1b1fc169291&oe=5F1E0FBE">
                         <br>
-                        <h2>Lê Ngọc Khánh Toàn</h2>
+                        <h4><b>Lê Ngọc Khánh Toàn</b></h4>
                         <span>Developer</span>
                         <hr class="dash">
                         <div>
@@ -49,7 +49,7 @@
                     <div class="card">
                         <img class="member" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/53894611_1502104339919640_6787073776891723776_n.jpg?_nc_cat=109&_nc_sid=7aed08&_nc_ohc=cKh0ctEqCFYAX9qph6W&_nc_ht=scontent-hkt1-1.xx&oh=d1b8347788a9ac42e7bff76a5dca0df9&oe=5F1C148D">
                         <br>
-                        <h2>Nguyễn Công Thành</h2>
+                        <h4><b>Nguyễn Công Thành</b></h4>
                         <span>Developer</span>
                         <hr class="dash">
                         <div>
@@ -74,7 +74,7 @@
                     <div class="card">
                         <img class="member" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/p960x960/31353922_2097040727199893_8837869048109727744_o.jpg?_nc_cat=103&_nc_sid=85a577&_nc_ohc=abeRKBK40M8AX_f9_3s&_nc_ht=scontent-hkt1-1.xx&_nc_tp=6&oh=763012fd0054c0f2bf114a0bdd4f0c4e&oe=5F1DC048">
                         <br>
-                        <h2>Lê Tuấn Minh</h2>
+                        <h4><b>Lê Tuấn Minh</b></h4>
                         <span>Developer</span>
                         <hr class="dash">
                         <div>
@@ -99,7 +99,7 @@
                     <div class="card">
                         <img class="member" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/230319_427466100792806_2224680805630709669_n.jpg?_nc_cat=108&_nc_sid=7aed08&_nc_ohc=0yGDSt6EFRMAX8guN0E&_nc_ht=scontent-hkt1-1.xx&oh=7c626429824948c83ee32e74bbbb933f&oe=5F1CAD89">
                         <br>
-                        <h2>Dương Gia Bảo</h2>
+                        <h4><b>Dương Gia Bảo</b></h4>
                         <span>Developer</span>
                         <hr class="dash">
                         <div>

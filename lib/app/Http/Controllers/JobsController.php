@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Jobs;
+use App\Categories;
 
 class JobsController extends Controller
 {
@@ -14,9 +15,10 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $jobs = Jobs::orderBy('title','desc')->get();
+        $jobss = Jobs::orderBy('title','desc')->get();
+        $categories = Categories::all();
         
-        return view('jobs.index')->with('jobss',$jobs);
+        return view('jobs.index', compact('jobss','categories'));
     }
 
     /**
