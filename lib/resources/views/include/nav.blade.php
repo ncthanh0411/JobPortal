@@ -34,7 +34,10 @@
                       <a class="dropdown-item" href="{{asset('logouts')}}"><i class="fas fa-sign-out-alt"></i>  Logout</a>
                     </div>
                 </div>
-
+                @elseif(isset(auth()->user()->id))
+               
+                    <a class="nav-link" href="{{asset('company/home')}}"><i class="fas fa-laptop"></i></a>
+        
                 @else
                     <a class="nav-link" href="{{asset('/choose')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
                 @endif

@@ -27,6 +27,7 @@ Route::group(['namespace'=>'Company'],function(){
         Route::group(['prefix'=>'listjob'], function(){
             Route::get('/','ComListJobController@getListJob');
             Route::get('/addJob','ComListJobController@addJob');
+            Route::get('/updateJob/{id}','ComListJobController@updateJob');
         });
         ///
         Route::group(['prefix'=>'profile'],function(){

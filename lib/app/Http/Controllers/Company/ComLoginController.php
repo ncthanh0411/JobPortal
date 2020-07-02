@@ -14,7 +14,7 @@ class ComLoginController extends Controller
     public function postLogin(Request $request){
         //$arr= ['com_email'=> $request->username, 'com_pass'=> $request->password];
         if(Auth::attempt(['email'=> $request->email, 'password'=> $request->password])){
-            return redirect()->intended('company/home');
+            return redirect()->intended('/');
         }else{
             return back()->withInput()->with('error','wrong password or email!!!');
         }

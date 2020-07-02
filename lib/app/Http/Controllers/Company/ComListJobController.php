@@ -19,4 +19,9 @@ class ComListJobController extends Controller
         return view('backend.addjobs');
     }
 
+    public function updateJob($id){
+        $job_update = Jobs::find($id);
+        return view('backend.updatejob')->with('job_update',$job_update);
+    }
+
 }
