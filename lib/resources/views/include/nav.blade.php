@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center sticky-top" style="background: linear-gradient(to left, #0062E6, #33AEFF); margin-bottom: 40px">
     <!-- Brand/logo -->
     
-        <a class="navbar-brand lefts" href="{{asset('/')}}">JobWork</a>
+        <a class="navbar-brand lefts" href="{{asset('/')}}">JobPortal</a>
         
         <!-- Links -->
     

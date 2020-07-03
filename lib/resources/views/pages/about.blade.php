@@ -74,7 +74,7 @@
                     <div class="card">
                         <img class="member" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/230319_427466100792806_2224680805630709669_n.jpg?_nc_cat=108&_nc_sid=7aed08&_nc_ohc=0yGDSt6EFRMAX8guN0E&_nc_ht=scontent-hkt1-1.xx&oh=7c626429824948c83ee32e74bbbb933f&oe=5F1CAD89">
                         <br>
-                        <h4><b>Lê Tuấn Minh</b></h4>
+                        <h4><b>Dương Gia Bảo</b></h4>
                         <span>Developer</span>
                         <hr class="dash">
                         <div>
@@ -99,7 +99,7 @@
                     <div class="card">
                         <img class="member" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/p960x960/31353922_2097040727199893_8837869048109727744_o.jpg?_nc_cat=103&_nc_sid=85a577&_nc_ohc=abeRKBK40M8AX_f9_3s&_nc_ht=scontent-hkt1-1.xx&_nc_tp=6&oh=763012fd0054c0f2bf114a0bdd4f0c4e&oe=5F1DC048">
                         <br>
-                        <h4><b>Dương Gia Bảo</b></h4>
+                        <h4><b>Lê Tuấn Minh</b></h4>
                         <span>Developer</span>
                         <hr class="dash">
                         <div>
