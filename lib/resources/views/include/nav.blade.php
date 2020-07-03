@@ -20,23 +20,23 @@
 
 
         <!-- Right -->
-        <ul class="navbar-nav ml-auto right" >
+        <ul class="navbar-nav ml-auto right" style = "margin-right: 10%;" >
             <li class="nav-item">
 
                 @if(isset(Auth::guard('student')->user()->id))
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                        {{Auth::guard('student')->user()->name}}
+                        <i class="fas fa-user-circle"></i>
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Link 1</a>
-                      <a class="dropdown-item" href="#">Link 2</a>
-                      <a class="dropdown-item" href="{{asset('logouts')}}"> Logout</a>
+                      <a class="dropdown-item" href="#"><i class="fas fa-address-card"></i>  {{Auth::guard('student')->user()->name}}</a>
+                      <a class="dropdown-item" href="#"><i class="fas fa-heart"></i>  Wish List</a>
+                      <a class="dropdown-item" href="{{asset('logouts')}}"><i class="fas fa-sign-out-alt"></i>  Logout</a>
                     </div>
                 </div>
 
                 @else
-                    <a class="nav-link" href="{{asset('/choose')}}">Login</a>
+                    <a class="nav-link" href="{{asset('/choose')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
                 @endif
             </li>
         </ul>

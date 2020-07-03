@@ -48,11 +48,13 @@ Route::group(['namespace'=>'Company'],function(){
 //Admin route------------------------------------------------------------------
 Route::group(['namespace'=>'Admin'],function(){
     Route::group(['prefix'=>'admin'],function(){
-        //Admin Login---------------------------------------------
+        //Admin Login------------------------------------------------------------
         Route::get('/login','AdminLoginController@getLogin');
         Route::post('/login','AdminLoginController@postLogin');
-        //Admin Dashboard------------------------------------------
-        Route::get('home','AdminHomeController@getHome');
+       
+        //Admin list jobs---------------------------------------------------------------
+        Route::get('home','AdminHomeController@getJob');
+        Route::get('watch','AdminApproveController@getdetail');
 
     });
 });
@@ -66,7 +68,7 @@ Route::group(['namespace'=>'Student'],function(){
         Route::get('/login','StudentLoginController@getLogin');
         Route::post('/login','StudentLoginController@postLogin');
         //Student dashboard----------------------------------------------------
-        Route::get('home','StudentHomeController@getHome');
+        Route::get('/home','StudentHomeController@getHome');
 
     });
 });

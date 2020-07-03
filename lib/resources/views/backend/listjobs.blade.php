@@ -59,7 +59,7 @@
 												@endif
 												<td>
 
-													<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+													<a href="/jobs/{{$job->id}}/edit" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 												</td>
 												<td>
 													<form  method="POST" action="{{action('JobsController@destroy',$job->id)}}">
