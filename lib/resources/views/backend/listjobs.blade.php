@@ -59,9 +59,9 @@
 												@endif
 												<td>
 
-													<a href="/jobs/{{$job->id}}/edit" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+													<a href="{{asset('company/listjob/updateJob')}}/{{$job->id}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 												</td>
-												<td>
+												<td> 
 													<form  method="POST" action="{{action('JobsController@destroy',$job->id)}}">
 													{{csrf_field()}}
 													<input type="hidden" name="_method" value="DELETE">
@@ -78,6 +78,12 @@
 											<p> {{ Session::get('success')}}</p>
 										</div>
 									@endif
+
+									@if(\Session::has('success_update'))
+									<div class = "alert alert-success">
+										<p> {{ Session::get('success_update')}}</p>
+									</div>
+								@endif
 								</table>							
 							</div>
 						</div>
