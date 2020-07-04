@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Addproduct | Kachi shop</title>
-<base href="{{asset('public/layout/backend')}}/">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/datepicker3.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-<script src="js/lumino.glyphs.js"></script>
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-</head>
-<body>
+@extends('backend.master')
+@section('title','Company Profile')
+@section('main')
 
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Jobs</h1>
+				<h1 class="page-header">Add New Jobs</h1>
 			</div>
 		</div><!--/.row-->
 		
@@ -27,7 +16,8 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">Job addition</div>
 					<div class="panel-body">
-						<form method="post" enctype="multipart/form-data">
+						<form method="post" action = "{{url('jobs')}}" enctype="multipart/form-data">
+							{{ csrf_field() }}
 							<div class="row" style="margin-bottom:40px">
 								<div class="col-xs-8">
 									<div class="form-group" >
@@ -39,47 +29,26 @@
 										<input required type="number" name="price" class="form-control">
 									</div>
 									<div class="form-group" >
-										<label>Expired date</label>
-										<input required type="text" name="price" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Amount</label>
-										<input required type="number" name="accessories" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Locate</label>
-										<input required type="text" name="warranty" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Welfare</label>
-										<input required type="text" name="promotion" class="form-control">
+										<label>Description</label>
+										<textarea class="ckeditor" required name="description"></textarea>
 									</div>
 									<div class="form-group" >
 										<label>Requirement</label>
-										<input required type="text" name="condition" class="form-control">
+										<textarea class="ckeditor" required name="requirement"></textarea>
 									</div>
+									
 									<div class="form-group" >
-										<label>Trạng thái</label>
-										<select required name="status" class="form-control">
-											<option value="1">Còn hàng</option>
-											<option value="0">Hết hàng</option>
-					                    </select>
+										<label>Expired date</label>
+										<input required type="text" name="ex_date" class="form-control">
 									</div>
-									<div class="form-group" >
-										<label>Description</label>
-										<textarea required name="description"></textarea>
-									</div>
+								
 									<div class="form-group" >
 										<label>Category</label>
 										<select required name="cate" class="form-control">
-											<option value="1">Web developer</option>
-											<option value="2">ReacteJS developer</option>
-											<option value="3">Mobile developer</option>
-											<option value="4">.Net developer</option>
-											<option value="5">Game developer</option>
-											<option value="6">AI researcher</option>
-											<option value="7">Tester</option>
-											<option value="8">Other</option>
+											<option value="1">Java</option>
+											<option value="2">PHP</option>
+											<option value="3">Testing</option>
+											<option value="4">Python</option>
 					                    </select>
 									</div>
 									<input type="submit" name="submit" value="Add" class="btn btn-primary">
@@ -93,47 +62,6 @@
 			</div>
 		</div><!--/.row-->
 	</div>	<!--/.main-->
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script>
-		$('#calendar').datepicker({
-		});
-		!function ($) {
-		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
-		        $(this).find('em:first').toggleClass("glyphicon-minus");      
-		    }); 
-		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-		}(window.jQuery);
 
-		$(window).on('resize', function () {
-		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-		})
-		$(window).on('resize', function () {
-		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-		});
-		function changeImg(input){
-		    //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
-		    if(input.files && input.files[0]){
-		        var reader = new FileReader();
-		        //Sự kiện file đã được load vào website
-		        reader.onload = function(e){
-		            //Thay đổi đường dẫn ảnh
-		            $('#avatar').attr('src',e.target.result);
-		        }
-		        reader.readAsDataURL(input.files[0]);
-		    }
-		}
-		$(document).ready(function() {
-		    $('#avatar').click(function(){
-		        $('#img').click();
-		    });
-		});
-	</script>	
-</body>
 
-</html>
+@stop

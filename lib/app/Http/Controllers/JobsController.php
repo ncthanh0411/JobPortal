@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Jobs;
+use App\Categories;
 
 class JobsController extends Controller
 {
@@ -14,9 +15,10 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $jobs = Jobs::orderBy('title','desc')->get();
+        $jobss = Jobs::orderBy('title','desc')->get();
+        $categories = Categories::all();
         
-        return view('jobs.index')->with('jobss',$jobs);
+        return view('jobs.index', compact('jobss','categories'));
     }
 
     /**
@@ -38,6 +40,18 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         //
+        $jobs = new Jobs([
+            'title' => $request->get('name'),
+            'Salary' => $request->get('price'),
+            'Job_Description' => $request->get('description'),
+            'Requirement' => $request->get('requirement'),
+            'Expired_date' => $request->get('ex_date'),
+            'company_id' => auth()->user()->id_com,
+            'categories_id' => (int)$request->get('cate')
+        ]);
+        $jobs->save();
+        return redirect() -> intended('company/listjob')->with('success','New Jobs added');
+
     }
 
     /**
@@ -72,7 +86,17 @@ class JobsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $job_update = new Jobs;
+        $jobs['title'] = $request->get('name');
+        $jobs['Salary'] = $request->get('price');
+        $job['Job_Description'] = $request->get('description');
+        $job['Requirement'] = $request->get('requirement');
+        $job['Expired_date'] = $request->get('ex_date');
+        $job['company_id'] = auth()->user()->id_com;
+        $job['categories_id'] = (int)$request->get('cate');
+        $job_update::where('id_job',$id)->update($jobs);
+        return redirect() -> intended('company/listjob')->with('success_update','Jobs updated');
+
     }
 
     /**
@@ -84,5 +108,8 @@ class JobsController extends Controller
     public function destroy($id)
     {
         //
+        $job = Jobs::find($id);
+        $job->delete();
+        return back();
     }
 }

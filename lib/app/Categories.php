@@ -9,7 +9,7 @@ class Categories extends Model
     // table name
     protected $table = 'categories';
     // Primary key
-    public $primaryKey = 'id';
+    public $primaryKey = 'id_cate';
     // Timestamps
     public $timestamps = true;
 }

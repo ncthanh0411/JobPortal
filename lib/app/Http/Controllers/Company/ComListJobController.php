@@ -10,13 +10,18 @@ class ComListJobController extends Controller
 {
     //
     public function getListJob(){
-        $com_id = auth()->user()->id;
+        $com_id = auth()->user()->id_com;
         $data = Jobs::where('company_id',$com_id)->get();
         return view('backend.listjobs')->with('data',$data);
     }
 
     public function addJob(){
         return view('backend.addjobs');
+    }
+
+    public function updateJob($id){
+        $job_update = Jobs::find($id);
+        return view('backend.updatejob')->with('job_update',$job_update);
     }
 
 }
