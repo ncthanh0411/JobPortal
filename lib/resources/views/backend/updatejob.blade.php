@@ -16,7 +16,7 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">Job update</div>
 					<div class="panel-body">
-						<form method="post" action = "{{action('JobsController@update', $job_update->id)}}">
+						<form method="post" action = "{{action('JobsController@update', $job_update->id_job)}}">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value = "PATCH"/>
 							<div class="row" style="margin-bottom:40px">

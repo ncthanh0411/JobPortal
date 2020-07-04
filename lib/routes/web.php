@@ -48,14 +48,26 @@ Route::group(['namespace'=>'Company'],function(){
 });
 //Admin route------------------------------------------------------------------
 Route::group(['namespace'=>'Admin'],function(){
+
+    Route::get('logoutss','AdminHomeController@getLogout');
+
     Route::group(['prefix'=>'admin'],function(){
         //Admin Login------------------------------------------------------------
-        Route::get('/login','AdminLoginController@getLogin');
-        Route::post('/login','AdminLoginController@postLogin');
+        Route::group(['prefix'=>'login','middleware'=>'CheckAdminLogedIn'], function(){
+            Route::get('/','AdminLoginController@getLogin');
+            Route::post('/','AdminLoginController@postLogin');
+        });
+        
        
         //Admin list jobs---------------------------------------------------------------
-        Route::get('home','AdminHomeController@getJob');
-        Route::get('watch','AdminApproveController@getdetail');
+        
+        Route::get('/home','AdminHomeController@getJob')->middleware('CheckAdminLogedOut');
+    
+        
+        //Admin approve jobs---------------------------------------------------------------
+        Route::get('watch/{id}','AdminApproveController@getdetail');
+        Route::post('watch/{id}','AdminApproveController@postdetail');
+        
 
     });
 });
@@ -66,10 +78,13 @@ Route::group(['namespace'=>'Student'],function(){
     Route::get('logouts','StudentHomeController@getLogout');
     Route::group(['prefix'=>'student'],function(){
         //Student Login---------------------------------------------------------
-        Route::get('/login','StudentLoginController@getLogin');
-        Route::post('/login','StudentLoginController@postLogin');
+       Route::group(['prefix'=>'login','middleware'=>'CheckStudentLogedIn'],function(){
+            Route::get('/','StudentLoginController@getLogin');
+            Route::post('/','StudentLoginController@postLogin');
+       }); 
+        
         //Student dashboard----------------------------------------------------
-        Route::get('/home','StudentHomeController@getHome');
+        Route::get('/home','StudentHomeController@getHome')->middleware('CheckStudentLogedOut');
 
     });
 });

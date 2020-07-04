@@ -35,7 +35,7 @@
 										
 										@foreach ($data as $job)
 											<tr>
-												<td>{!!$job->id!!}</td>
+												<td>{!!$job->id_job!!}</td>
 												<td>{!!$job->title!!}</td>											</td>
 												<td>{{$job->Salary}}</td>
 												<td>{{$job->Expired_date}}</td>
@@ -59,10 +59,10 @@
 												@endif
 												<td>
 
-													<a href="{{asset('company/listjob/updateJob')}}/{{$job->id}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+													<a href="{{asset('company/listjob/updateJob')}}/{{$job->id_job}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 												</td>
 												<td> 
-													<form  method="POST" action="{{action('JobsController@destroy',$job->id)}}">
+													<form  method="POST" action="{{action('JobsController@destroy',$job->id_job)}}">
 													{{csrf_field()}}
 													<input type="hidden" name="_method" value="DELETE">
 													<button type="submit" class="btn btn-danger"> Delete</button>

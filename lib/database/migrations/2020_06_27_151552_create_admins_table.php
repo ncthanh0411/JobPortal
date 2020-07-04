@@ -17,11 +17,8 @@ class CreateAdminsTable extends Migration
             $table->bigIncrements('id');
             $table->string('email')->unique();
             $table->string('password');
-
-            $table->unsignedBigInteger('manage_apply_id')->unsigned();
-            $table->foreign('manage_apply_id')
-                  ->references('id')
-                  ->on('manage_applies');
+            $table->rememberToken();
+            
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class CreateCompanyUsersTable extends Migration
     public function up()
     {
         Schema::create('company_users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id_com');
             $table->string('username');
             $table->string('companyname');
             $table->string('email')->unique();

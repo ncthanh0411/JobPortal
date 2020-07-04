@@ -57,7 +57,7 @@
 							@endif
 							
 						</div>
-						<p class="add-cart text-center" ><a class="btn btn-primary" href="{{asset('company/profile/EditProfile/'.$item->id)}}">Edit profile</a></p>
+						<p class="add-cart text-center" ><a class="btn btn-primary" href="{{asset('company/profile/EditProfile/'.$item->id_com)}}">Edit profile</a></p>
 						<div class="clearfix"></div>
 					</div>
 				</div>

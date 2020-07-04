@@ -46,7 +46,7 @@ class JobsController extends Controller
             'Job_Description' => $request->get('description'),
             'Requirement' => $request->get('requirement'),
             'Expired_date' => $request->get('ex_date'),
-            'company_id' => auth()->user()->id,
+            'company_id' => auth()->user()->id_com,
             'categories_id' => (int)$request->get('cate')
         ]);
         $jobs->save();
@@ -92,9 +92,9 @@ class JobsController extends Controller
         $job['Job_Description'] = $request->get('description');
         $job['Requirement'] = $request->get('requirement');
         $job['Expired_date'] = $request->get('ex_date');
-        $job['company_id'] = auth()->user()->id;
+        $job['company_id'] = auth()->user()->id_com;
         $job['categories_id'] = (int)$request->get('cate');
-        $job_update::where('id',$id)->update($jobs);
+        $job_update::where('id_job',$id)->update($jobs);
         return redirect() -> intended('company/listjob')->with('success_update','Jobs updated');
 
     }

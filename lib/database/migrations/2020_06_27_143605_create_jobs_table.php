@@ -14,7 +14,7 @@ class CreateJobsTable extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id_job');
             $table->string('title');
             $table->integer('Salary');
             $table->text('Job_description');
@@ -24,12 +24,12 @@ class CreateJobsTable extends Migration
             
             $table->unsignedBigInteger('company_id')->unsigned();
             $table->foreign('company_id')
-                  ->references('id')
+                  ->references('id_com')
                   ->on('company_users');
 
             $table->unsignedBigInteger('categories_id')->unsigned();
             $table->foreign('categories_id')
-                  ->references('id')
+                  ->references('id_cate')
                   ->on('categories');
             $table->timestamps();
         });

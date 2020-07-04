@@ -14,17 +14,17 @@ class CreateManageAppliesTable extends Migration
     public function up()
     {
         Schema::create('manage_applies', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id_apply');
             $table->unsignedBigInteger('jobs_id')->unsigned();
             $table->foreign('jobs_id')
-                  ->references('id')
+                  ->references('id_job')
                   ->on('jobs');
 
             $table->integer('status')->default(0);
 
             $table->unsignedBigInteger('student_id')->unsigned();
             $table->foreign('student_id')
-                  ->references('id')
+                  ->references('id_stu')
                   ->on('students');
             $table->timestamps();
         });

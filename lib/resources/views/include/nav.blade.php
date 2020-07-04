@@ -23,7 +23,7 @@
         <ul class="navbar-nav ml-auto right" style = "margin-right: 10%;" >
             <li class="nav-item">
 
-                @if(isset(Auth::guard('student')->user()->id))
+                @if(isset(Auth::guard('student')->user()->id_stu))
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         <i class="fas fa-user-circle"></i>
@@ -34,9 +34,14 @@
                       <a class="dropdown-item" href="{{asset('logouts')}}"><i class="fas fa-sign-out-alt"></i>  Logout</a>
                     </div>
                 </div>
-                @elseif(isset(auth()->user()->id))
+                @elseif(isset(Auth::guard('admin')->user()->id))
+               
+                    <a class="nav-link" href="{{asset('admin/home')}}"><i class="fas fa-desktop"></i></a>
+                @elseif(isset(auth()->user()->id_com))
                
                     <a class="nav-link" href="{{asset('company/home')}}"><i class="fas fa-laptop"></i></a>
+   
+                
         
                 @else
                     <a class="nav-link" href="{{asset('/choose')}}"><i class="fas fa-sign-in-alt"></i> Login</a>

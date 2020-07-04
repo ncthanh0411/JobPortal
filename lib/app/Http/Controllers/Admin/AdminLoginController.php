@@ -14,8 +14,8 @@ class AdminLoginController extends Controller
     }
     public function postLogin(Request $request){
         if(Auth::guard('admin')->attempt(['email'=> $request->email, 'password'=> $request->password])){
-            //return redirect()->intended('admin/dashboard');
-            dd("thanhcong");
+            return redirect()->intended('/');
+            //dd("thanhcong");
         }else{
             return back()->withInput()->with('error','wrong password or email!!!');
         }

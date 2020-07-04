@@ -16,7 +16,7 @@ class Student extends Authenticatable
      * @var array
      */
     protected $guard='student';
-
+    public $primaryKey = 'id_stu';
     protected $fillable = [
         'email','password',
          

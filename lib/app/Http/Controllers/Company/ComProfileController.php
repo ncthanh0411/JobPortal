@@ -9,7 +9,7 @@ class ComProfileController extends Controller
 {
     //
     public function getComProfile(){
-        $com_id= auth()->user()->id;
+        $com_id= auth()->user()->id_com;
         $data['item']= User::find($com_id);
         return view('backend.companyprofile',$data);//->with(['com_id'=>$com_id]);
     }
@@ -43,7 +43,7 @@ class ComProfileController extends Controller
         if($request->Introduction!=null){
             $arr['introduction']=$request->Introduction;
         }
-        $company::where('id',$id)->update($arr);
+        $company::where('id_com',$id)->update($arr);
         return redirect('company/profile');
     }
 }

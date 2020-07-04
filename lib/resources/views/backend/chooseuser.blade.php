@@ -13,7 +13,7 @@
 
 <div class="container">
   <h2>Who Are You</h2>
-  <a href="{{asset('admin/login')}}" class="btn btn-info" role="button">ADMIN</a>
+  <a href="{{asset('/admin/login')}}" class="btn btn-info" role="button">ADMIN</a>
   <a href="{{asset('/login')}}" class="btn btn-info" role="button">COMPANY</a>
   <a href="{{asset('student/login')}}" class="btn btn-info" role="button">STUDENT</a>
 </div>
