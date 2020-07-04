@@ -17,7 +17,7 @@ class AdminLoginController extends Controller
             return redirect()->intended('/');
             //dd("thanhcong");
         }else{
-            return back()->withInput()->with('error','wrong password or email!!!');
+            return back()->withInput()->with('error','Wrong password or email !!!');
         }
     }
 }

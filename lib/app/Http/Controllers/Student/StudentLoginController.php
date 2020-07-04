@@ -16,7 +16,7 @@ class StudentLoginController extends Controller
             $student_id= Auth::guard('student')->user()->id;
             return redirect()->intended('/')->with('$Student_id',$student_id);
         }else{
-            return back()->withInput()->with('error','wrong password or email!!!');
+            return back()->withInput()->with('error','Wrong password or email !!!');
         }
     }
 }
