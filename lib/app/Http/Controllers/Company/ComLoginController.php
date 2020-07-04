@@ -16,7 +16,7 @@ class ComLoginController extends Controller
         if(Auth::attempt(['email'=> $request->email, 'password'=> $request->password])){
             return redirect()->intended('/');
         }else{
-            return back()->withInput()->with('error','wrong password or email!!!');
+            return back()->withInput()->with('error','Wrong email password !!!');
         }
     }
     

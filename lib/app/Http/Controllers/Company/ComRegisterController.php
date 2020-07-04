@@ -24,14 +24,14 @@ class ComRegisterController extends Controller
                 'location'=>'required'
             ],
             [
-                'email.required'=>'Please, enter your email',
-                'email.email'=>'Wrong email structure',
-                'email.unique'=>'email is already used',
-                'password.required'=>'Please, enter your password',
-                're_password.same'=>'Password is not similar',
-                'password.min'=>'Minimum of six characters for password required',
-                'companyname'=> 'Please, enter your companyname',
-                'location'=> 'Please, enter your location'
+                'email.required'=>'Please, enter your email.',
+                'email.email'=>'Wrong email structure.',
+                'email.unique'=>'email is already used.',
+                'password.required'=>'Please, enter your password.',
+                're_password.same'=>'Password is not similar.',
+                'password.min'=>'Minimum of six characters for password required.',
+                'companyname'=> 'Please, enter your companyname.',
+                'location'=> 'Please, enter your location.'
             ]);
             $user= new User;
             $user->username = $request->username;
@@ -46,7 +46,7 @@ class ComRegisterController extends Controller
 
             $user->save();
 
-            return redirect()->back()->with('thanhcong','create successfull');
+            return redirect()->back()->with('thanhcong','Created successfully !!!');
 
 
 
