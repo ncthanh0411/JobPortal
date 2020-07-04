@@ -89,11 +89,11 @@ class JobsController extends Controller
         $job_update = new Jobs;
         $jobs['title'] = $request->get('name');
         $jobs['Salary'] = $request->get('price');
-        $job['Job_Description'] = $request->get('description');
-        $job['Requirement'] = $request->get('requirement');
-        $job['Expired_date'] = $request->get('ex_date');
-        $job['company_id'] = auth()->user()->id_com;
-        $job['categories_id'] = (int)$request->get('cate');
+        $jobs['Job_Description'] = $request->get('description');
+        $jobs['Requirement'] = $request->get('requirement');
+        $jobs['Expired_date'] = $request->get('ex_date');
+        $jobs['company_id'] = auth()->user()->id_com;
+        $jobs['categories_id'] = (int)$request->get('cate');
         $job_update::where('id_job',$id)->update($jobs);
         return redirect() -> intended('company/listjob')->with('success_update','Jobs updated');
 
