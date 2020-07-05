@@ -42,7 +42,7 @@ body, html {
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
-  border: 3px solid #f1f1f1;
+  border: 3px solid #00000;
   position: absolute;
   top: 50%;
   left: 50%;
