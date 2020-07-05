@@ -29,7 +29,7 @@
                         <i class="fas fa-user-circle"></i>
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#"><i class="fas fa-address-card"></i>  {{Auth::guard('student')->user()->name}}</a>
+                      <a class="dropdown-item" href="{{asset('profile')}}"><i class="fas fa-address-card"></i>  {{Auth::guard('student')->user()->name}}</a>
                       <a class="dropdown-item" href="#"><i class="fas fa-heart"></i>  Wish List</a>
                       <a class="dropdown-item" href="{{asset('logouts')}}"><i class="fas fa-sign-out-alt"></i>  Logout</a>
                     </div>
