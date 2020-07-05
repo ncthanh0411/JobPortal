@@ -73,7 +73,7 @@ Route::group(['namespace'=>'Admin'],function(){
 });
 
 //Student route-----------------------------------------------------------------
-Route::resource('/profile', 'StudentController');
+
 
 Route::group(['namespace'=>'Student'],function(){
     //Student logout
@@ -81,11 +81,13 @@ Route::group(['namespace'=>'Student'],function(){
     Route::group(['prefix'=>'student'],function(){
         //Student Login---------------------------------------------------------
        Route::group(['prefix'=>'login','middleware'=>'CheckStudentLogedIn'],function(){
+           
             Route::get('/','StudentLoginController@getLogin');
             Route::post('/','StudentLoginController@postLogin');
        }); 
-        
+        Route::resource('/profile', 'StudentController')->middleware('CheckStudentLogedOut');
         //Student dashboard----------------------------------------------------
+        
         Route::get('/home','StudentHomeController@getHome')->middleware('CheckStudentLogedOut');
 
     });
