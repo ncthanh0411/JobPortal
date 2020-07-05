@@ -41,6 +41,7 @@ class JobsController extends Controller
     {
         //
         $jobs = new Jobs([
+           
             'title' => $request->get('name'),
             'Salary' => $request->get('price'),
             'Job_Description' => $request->get('description'),

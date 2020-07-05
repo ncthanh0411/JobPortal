@@ -35,7 +35,7 @@
                                         </div>
                                         
                                         <p class="card-text" id="description"> {{$job->Job_description}}</p>
-                                        <span id="{{$job->id}}">
+                                        <span id="{{$job->id_job}}">
                                             <i class="fa fa-heart-o" aria-hidden="true"></i>
                                         </span>
                                 </div>
@@ -44,13 +44,13 @@
                             </div>
                             <script type="text/javascript">
                                 $(document).ready(function(){
-                                $("#{{$job->id}}").click(function(){
-                                    if($("#{{$job->id}}").hasClass("liked")){
-                                        $("#{{$job->id}}").html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
-                                        $("#{{$job->id}}").removeClass("liked");
+                                $("#{{$job->id_job}}").click(function(){
+                                    if($("#{{$job->id_job}}").hasClass("liked")){
+                                        $("#{{$job->id_job}}").html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
+                                        $("#{{$job->id_job}}").removeClass("liked");
                                     }else{
-                                        $("#{{$job->id}}").html('<i class="fa fa-heart" aria-hidden="true"></i>');
-                                        $("#{{$job->id}}").addClass("liked");
+                                        $("#{{$job->id_job}}").html('<i class="fa fa-heart" aria-hidden="true"></i>');
+                                        $("#{{$job->id_job}}").addClass("liked");
                                     }
                                     });
                                 });
