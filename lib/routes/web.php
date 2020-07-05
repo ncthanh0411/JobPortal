@@ -73,6 +73,8 @@ Route::group(['namespace'=>'Admin'],function(){
 });
 
 //Student route-----------------------------------------------------------------
+Route::resource('/profile', 'StudentController');
+
 Route::group(['namespace'=>'Student'],function(){
     //Student logout
     Route::get('logouts','StudentHomeController@getLogout');
