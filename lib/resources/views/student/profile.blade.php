@@ -125,10 +125,24 @@
                 
             </div>
             <div class="tab-pane" id="cv">
-                <input type="file" name="cv" id="file" style="display:none" >
-                <label for="file" id="selector">Select file</label>
-                <!-- <embed src="selector.pdf" width="100%" height="600px" /> -->
+                <br>
+                <form method="post" action = "{{action('Student\StudentController@update', $st->id_stu)}}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="_method" value = "PATCH"/>
+                    @if($st->CV == '')
+                        <input type="file" name="cv" id="file" style="display:none" onchange="myFunction()" accept="application/pdf">
+                        <label for="file" id="selector">Select file</label>
+                        <p id ="btnSave"></p>
                 
+                    @else
+                        <input type="file" name="cv" id="file" style="display:none"onchange="myFunction()" accept="application/pdf" >
+                        <label for="file" id="selector">Select file</label>
+                        <p id ="btnSave"></p>
+                        <p id ="showCV"><embed src="{{asset('lib/storage/app/cv/'.$st->CV)}}" width="100%" height="700px" /> </p>
+                 
+                          
+                    @endif
+                </form>
             </div>
             
             </div>
@@ -136,7 +150,18 @@
         </div>
     </div>
 </div>
-                                                      
 
+<script>
+    		function myFunction() {
+		
+            var f = document.getElementById("file");
+            if(f.value != ""){
+                console.log(f.value);
+                document.getElementById("selector").innerHTML = f.value;
+                document.getElementById("btnSave").innerHTML = " <input type='submit' name='submit' value='Update' class='btn btn-primary'>";
+        
+            }
+		}
+</script>
 
 @endsection

@@ -72,7 +72,14 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = new Student;
+        if($request->hasFile('cv')){
+    		$cv=$request->cv->getClientOriginalName();
+    		$arr['cv']= $cv;
+    		$request->cv->storeAs('cv',$cv);
+        }
+        $student::where('id_stu',$id)->update($arr);
+        return redirect() -> intended('student/profile')->with('CV_success','CV updated');
     }
 
     /**
