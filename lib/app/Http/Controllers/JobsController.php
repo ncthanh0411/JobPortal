@@ -63,7 +63,8 @@ class JobsController extends Controller
      */
     public function show($id)
     {
-        //
+        $job = Jobs::find($id);
+        return view('jobs.detail-job')->with('job_t', $job);
 
     }
 
