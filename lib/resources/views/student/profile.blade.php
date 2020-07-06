@@ -43,7 +43,14 @@
             <div class="tab-pane active" id="home">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form class="form" action="##" method="post" id="registrationForm">
+                        @if(\Session::has('success'))
+                        <div class = "alert alert-success">
+                            <p> {{ Session::get('success')}}</p>
+                        </div>
+                    @endif
+                    <form method="post" action = "{{action('Student\StudentController@update', $st->id_stu)}}">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="_method" value = "PATCH"/>
                         <div class="form-group">
                             
                             <div class="col-xs-12">
@@ -74,7 +81,7 @@
                             
                             <div class="col-xs-12">
                                 <label for="phone"><h4>Your major</h4></label>
-                                <input type="text" class="form-control" name="phone" id="phone" value="{{$st->major}}" title="enter your phone number if any." >
+                                <input type="text" class="form-control" name="phone" id="phone" value="{{$st->major}}" title="enter your phone number if any."disabled >
                             </div>
                         </div>
                         
@@ -86,7 +93,7 @@
                                 
                             </div>
                         </div>
-                </form>
+                    </form>
                     </div>
                 </div>
                     
