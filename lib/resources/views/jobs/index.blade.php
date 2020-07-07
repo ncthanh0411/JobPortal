@@ -28,18 +28,18 @@
                             
                             <div class="col-md-8">
                                 <div class="card-body" >
-                                    <a href="{{asset('/jobs')}}/{{$job->id_job}}" id="title" style="color:#000099">
+                                    <a href="{{asset('/jobs')}}/{{$job->id_job}}" id="title">
                                         <h4 class="card-title">{{$job->title}}</h4>
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <p class="card-text" id="salary"><i class="fa fa-dollar"> {{$job->Salary}}</i></p>
                                             </div>
 
-                                            <div class="col-md-3">
+                                            <div class="col-md-9">
                                                 <p class="card-text" id="city"><i class='fa fa-map-marker'></i> {{$job->location}}</p>
                                             </div>
                                         </div>
-                                        <p class="card-text" id="description"> {!!$job->Job_description!!}</p>
+                                        <p class="card-text" id="description"> {{strip_tags($job->Job_description)}}</p>
                                     </a>
                                     <span id="{{$job->id_job}}">
                                         <i class="fa fa-heart-o" aria-hidden="true"></i>

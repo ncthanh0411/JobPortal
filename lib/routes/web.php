@@ -100,7 +100,7 @@ Route::group(['namespace'=>'Student'],function(){
         //Student dashboard----------------------------------------------------
         
         Route::get('/home','StudentHomeController@getHome')->middleware('CheckStudentLogedOut');
-
+        Route::get('/Company/{id}', 'StudentHomeController@getCompany');
     });
 });
 

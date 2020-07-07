@@ -49,8 +49,11 @@ body {
 
 .bao h3.card-title{
 	margin-bottom: 5px;
-
 }
+.bao .card-title:hover{
+	color:red;
+}
+
 .bao #salary{
 	font-size: 14px;
 	margin-bottom: 10px;
@@ -83,7 +86,6 @@ body {
 }
 .bao #col-img{
 	width: 100%;
-
 }
 .bao #categories{
 	width: 300px;
