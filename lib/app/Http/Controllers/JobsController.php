@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Jobs;
 use App\Categories;
+use App\User;
+use DB;
 
 class JobsController extends Controller
 {
@@ -63,9 +65,9 @@ class JobsController extends Controller
      */
     public function show($id)
     {
-        $job = Jobs::find($id);
-        return view('jobs.detail-job')->with('job_t', $job);
-
+        $data['job'] = DB::table('jobs')->join('company_users', 'jobs.company_id', '=', 'company_users.id_com')->where('id_job', $id)->get();
+        return view('jobs.detail-job', $data);
+        
     }
 
     /**

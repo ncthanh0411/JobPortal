@@ -39,8 +39,8 @@ body {
 .bao #title{
 	color: #000099;
 }
-.bao .card-body a:hover, #salary:hover,#title:hover{
-	color: #ff0000;
+.bao .card-body a:hover{
+	color: #498df3;
 	text-decoration: none;
 }
 
