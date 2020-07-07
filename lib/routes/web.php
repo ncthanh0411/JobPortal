@@ -65,9 +65,20 @@ Route::group(['namespace'=>'Admin'],function(){
     
         
         //Admin approve jobs---------------------------------------------------------------
+        
         Route::get('watch/{id}','AdminApproveController@getdetail');
         Route::post('watch/{id}','AdminApproveController@postdetail');
-        
+
+        //Addmin manage account------------------------------------------------------------
+
+        Route::get('/account','AdminAccountController@getAccount');
+
+
+        //Admin add account Student---------------------------------------------------------
+        Route::group(['prefix'=>'CreateAccount'],function(){
+            Route::get('/','AdminAccountController@getCreateAccount');
+            Route::post('/','AdminAccountController@postCreateAccount');
+        });
 
     });
 });
