@@ -32,8 +32,8 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<ul class="nav menu">
 			<li role="presentation" class="divider"></li>
-			<li class="active"><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li><a href="widgets.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>  List of Jobs</a></li>
+			<li class="active"><a href="{{asset('admin/home/')}}"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li><a href="{{asset('admin/account/')}}"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>  List of Jobs</a></li>
 			<li><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Profile</a></li>
 			<li role="presentation" class="divider"></li>
 		</ul>
