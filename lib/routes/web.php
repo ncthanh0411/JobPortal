@@ -85,6 +85,8 @@ Route::group(['namespace'=>'Admin'],function(){
 
 //Student route-----------------------------------------------------------------
 
+//Add CV route
+Route::post('/addCV', 'AddCVController@index');
 
 Route::group(['namespace'=>'Student'],function(){
     //Student logout
