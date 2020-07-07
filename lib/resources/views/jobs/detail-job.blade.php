@@ -107,8 +107,8 @@
                             <p>Expired Date:</p>
                         </div>
                         <div class="col-lg-6">
-                            <p>Ho Chi Minh</p>
-                            <p>Java</p>
+                            <p>{{$job_t->location}}</p>
+                            <p>{{$job_t->name}}</p>
                             <p><span>$</span>{{$job_t->Salary}}</p>
                             <p>{{$job_t->Expired_date}}</p>
                         </div>
@@ -131,11 +131,11 @@
                         <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
                     </svg>{{$job_t->email}}</p>
 
-                    <p id="description"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <p id="description"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
                         <circle cx="8" cy="4.5" r="1"/>
-                    </svg>{!!$job_t->introduction!!}</p>
+                    </svg>{{$job_t->introduction}}</p>
                     
                     <div style="width: 100%; text-align: right;">
                         <button type="button" class="btn btn-light">See more</button>

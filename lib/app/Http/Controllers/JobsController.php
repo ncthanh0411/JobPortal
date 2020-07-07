@@ -17,10 +17,14 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $jobss = Jobs::orderBy('title','desc')->get();
-        $categories = Categories::all();
+        // $jobss = Jobs::orderBy('title','desc')->get();
         
-        return view('jobs.index', compact('jobss','categories'));
+        $data['job'] = DB::table('jobs')->join('company_users', 'jobs.company_id', '=', 'company_users.id_com')
+        ->join('categories', 'jobs.categories_id', '=', 'categories.id_cate')->get();
+        $categories = Categories::all();
+        return view('jobs.index', $data);
+        
+        //return view('jobs.index', compact('data','categories'));
     }
 
     /**
@@ -65,8 +69,11 @@ class JobsController extends Controller
      */
     public function show($id)
     {
-        $data['job'] = DB::table('jobs')->join('company_users', 'jobs.company_id', '=', 'company_users.id_com')->where('id_job', $id)->get();
+        $data['job'] = DB::table('jobs')->join('company_users', 'jobs.company_id', '=', 'company_users.id_com')
+        ->join('categories', 'jobs.categories_id', '=', 'categories.id_cate')->where('id_job', $id)->get();
         return view('jobs.detail-job', $data);
+
+
         
     }
 

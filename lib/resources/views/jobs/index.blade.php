@@ -14,12 +14,15 @@
             </div>
 
             <div class="col-md-8">
-                @foreach($jobss as $job)
+                @foreach($job as $job)
                 @if ($job->Status == 1)    
                     <div class="card " id="list-right">
                         <div class="row">
+                            
                             <div class="col-md-4" id="col-img">
-                                <img class="card-img" src="https://fpt.vn/storage/upload/images/site/fpt.png">
+                                <a href="{{asset('/jobs')}}/{{$job->id_job}}" id="title" style="color:#000099">
+                                    <img class="card-img" src="{{asset('lib/storage/app/avatar/'.$job->logo)}}">
+                                </a>
                             </div>
 
                             
@@ -33,7 +36,7 @@
                                             </div>
 
                                             <div class="col-md-3">
-                                                <p class="card-text" id="city"><i class='fa fa-map-marker'></i> city</p>
+                                                <p class="card-text" id="city"><i class='fa fa-map-marker'></i> {{$job->location}}</p>
                                             </div>
                                         </div>
                                         <p class="card-text" id="description"> {!!$job->Job_description!!}</p>

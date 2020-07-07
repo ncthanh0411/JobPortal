@@ -10,7 +10,7 @@
     </div>
     
     <div class="card-text" id="text-cate">
-        @foreach($categories as $cate)
+        @foreach($job as $cate)
             <div class="row">
                 <div class="col-md-12" id="list-cate">
                     <button type="button" class="btn btn-outline-dark" id="categories">{{$cate->name}}</button>

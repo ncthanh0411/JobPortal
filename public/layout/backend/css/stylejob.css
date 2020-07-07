@@ -2,6 +2,9 @@ body {
     font-family: Arial;
 }
 /**************************************************************/
+.bao .card-img{
+    width: 100%;
+}
 
 .bao .fa-heart:hover{
 	color: #f44336 !important;
@@ -79,7 +82,7 @@ body {
 	padding-left: 0px;
 }
 .bao #col-img{
-	border-right: 1px solid #f2f2f2;
+	width: 100%;
 
 }
 .bao #categories{
