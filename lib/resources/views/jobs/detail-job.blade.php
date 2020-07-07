@@ -72,6 +72,11 @@
     
 </style>
 
+@if(\Session::has('success'))
+    <script type='text/javascript'>alert('{{ Session::get('success')}}');</script>
+@endif
+
+
 <div class="detail-job">
     <div class="container">
     @foreach($job as $job_t)
@@ -94,7 +99,16 @@
             <div class="col-lg-4">
                 <img id="logo" src="{{asset('lib/storage/app/avatar/'.$job_t->logo)}}">
                 <div class="buttons">
-                    <button class="btn-hover color-1">APPLY</button>
+                @if(isset(Auth::guard('student')->user()->id_stu))
+                    <form method="post" action = "{{url('addCV')}}" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <input type="hidden" id = "jobID" name = "jobID" value = "{{ $job_t->id_job }}">
+                        <input type="hidden" id = "studentID" name = "studentID" value = "{{ Auth::guard('student')->user()->id_stu }}">
+                        <input type="submit" name="submit" value="APPLY" class="btn-hover color-1">
+                    </form>
+                @else
+                    <a href="{{asset('student/login')}}"><button class="btn-hover color-1">APPLY</button></a>
+                @endif
                 </div>
                 <div class="info">
                     <h4 style="text-align: center; font-weight: bold;">Job Info</h4>
@@ -146,5 +160,9 @@
     @endforeach
     </div>
 </div>
+
+<script>
+    
+</script>
 
 @endsection
