@@ -9,7 +9,7 @@ class StudentLoginController extends Controller
 {
     //
     public function getLogin(){
-        return view('backend.login');
+        return view('student.login');
     }
     public function postLogin(Request $request){
         if(Auth::guard('student')->attempt(['email'=> $request->email, 'password'=> $request->password])){

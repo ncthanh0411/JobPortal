@@ -21,7 +21,6 @@ body {
 .bao .col-md-4{
 	text-align: center;
 }
-
 .bao .fa-heart-o{
 	color: #00000030;
 	cursor: pointer;
@@ -86,6 +85,9 @@ body {
 }
 .bao #col-img{
 	width: 100%;
+}
+.bao img{
+    width: 100%;
 }
 .bao #categories{
 	width: 300px;

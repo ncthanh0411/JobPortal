@@ -22,6 +22,7 @@ class JobsController extends Controller
         $data['job'] = DB::table('jobs')->join('company_users', 'jobs.company_id', '=', 'company_users.id_com')
         ->join('categories', 'jobs.categories_id', '=', 'categories.id_cate')->get();
         $categories = Categories::all();
+
         return view('jobs.index', $data);
         
         //return view('jobs.index', compact('data','categories'));

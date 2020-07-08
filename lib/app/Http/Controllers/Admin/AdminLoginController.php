@@ -10,7 +10,7 @@ class AdminLoginController extends Controller
 {
     //
     public function getLogin(){
-        return view('backend.login');
+        return view('admin.login');
     }
     public function postLogin(Request $request){
         if(Auth::guard('admin')->attempt(['email'=> $request->email, 'password'=> $request->password])){

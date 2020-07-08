@@ -4,7 +4,7 @@
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Jobs <a href= "{{asset('company/listjob/addJob')}}" class="btn btn-primary">Add jobs</a></h1> 
+				<h1 class="page-header">Jobs <a href= "{{asset('company/listjob/addJob')}}" class="btn btn-primary">Add job</a></h1> 
 			</div>
 		</div><!--/.row-->
 		
@@ -20,7 +20,7 @@
 								<table class="table table-bordered" style="margin-top:20px;">				
 									<thead>
 										<tr class="bg-primary">
-											<th>ID</th>
+											<!-- <th>ID</th> -->
 											<th width="30%">Job tilte</th>
 											<th>Salary</th>
 											<th>Amount</th>
@@ -35,7 +35,7 @@
 										
 										@foreach ($data as $job)
 											<tr>
-												<td>{!!$job->id_job!!}</td>
+												<!-- <td>{!!$job->id_job!!}</td> -->
 												<td>{!!$job->title!!}</td>											</td>
 												<td>{{$job->Salary}}</td>
 												<td>{{$job->Expired_date}}</td>
@@ -57,11 +57,11 @@
 												@else 
 													<td style="color:green">APPROVED</td>
 												@endif
-												<td>
+												<td style="text-align:center">
 
 													<a href="{{asset('company/listjob/updateJob')}}/{{$job->id_job}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 												</td>
-												<td> 
+												<td style="text-align:center"> 
 													<form  method="POST" action="{{action('JobsController@destroy',$job->id_job)}}">
 													{{csrf_field()}}
 													<input type="hidden" name="_method" value="DELETE">
