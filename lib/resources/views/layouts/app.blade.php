@@ -18,7 +18,7 @@
 
         <base href="{{asset('public/layout/backend')}}/">
 
-        <title>{{config('app.name', 'JobWork')}}</title>
+        <title>{{config('app.name', 'JobPortal')}}</title>
         <link href="css/stylejob.css" rel="stylesheet">
         <style>
             .left{

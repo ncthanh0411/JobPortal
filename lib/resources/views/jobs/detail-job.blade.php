@@ -79,7 +79,6 @@
 
 <div class="detail-job">
     <div class="container">
-    @foreach($job as $job_t)
         <div class="row">
             <div class="col-lg-8">
                 <h2 style="font-weight: bold;">{{$job_t->title}}</h2>
@@ -100,13 +99,21 @@
                 <img id="logo" src="{{asset('lib/storage/app/avatar/'.$job_t->logo)}}">
                 <div class="buttons">
                 @if(isset(Auth::guard('student')->user()->id_stu))
-                    <form method="post" action = "{{url('addCV')}}" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <input type="hidden" id = "jobID" name = "jobID" value = "{{ $job_t->id_job }}">
-                        <input type="hidden" id = "studentID" name = "studentID" value = "{{ Auth::guard('student')->user()->id_stu }}">
-                        <input type="submit" name="submit" value="APPLY" class="btn-hover color-1">
-                    </form>
-                @else
+                    @foreach ($manage as $ma)
+                        @if($ma->jobs_id == $job_t->id_job)
+                            <p hidden>{{$temp = 1}}</p>
+                            <button id = "btnalready" class="btn-hover color-1" onclick="myFunction()">Apply</button>
+                        @endif
+                    @endforeach
+                    @if( $temp == 0)
+                        <form method="post" action = "{{url('addCV')}}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <input type="hidden" id = "jobID" name = "jobID" value = "{{ $job_t->id_job }}">
+                            <input type="hidden" id = "studentID" name = "studentID" value = "{{ Auth::guard('student')->user()->id_stu }}">
+                            <input type="submit" name="submit" value="APPLY" class="btn-hover color-1">
+                        </form>
+                    @endif
+                @elseif(isset(Auth::guard('admin')->user()->id) == false and isset(auth()->user()->id_com) == false)
                     <a href="{{asset('student/login')}}"><button class="btn-hover color-1">APPLY</button></a>
                 @endif
                 </div>
@@ -157,12 +164,15 @@
                 </div>
             </div>
         </div>
-    @endforeach
+ 
     </div>
 </div>
 
 <script>
-    
+    	function myFunction() {
+		
+      alert('You have already apply CV to this job');
+    }
 </script>
 
 @endsection

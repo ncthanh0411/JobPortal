@@ -36,7 +36,7 @@
 										@foreach ($data as $job)
 											<tr>
 												<td>{!!$job->id_job!!}</td>
-												<td>{!!$job->title!!}</td>											</td>
+												<td>{!!$job->title!!}</td>										
 												<td>{{$job->Salary}}</td>
 												<td>{{$job->Expired_date}}</td>
 												@if ($job->categories_id == 1)
