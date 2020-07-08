@@ -19,8 +19,8 @@
                     <div class="card " id="list-right">
                         <div class="row">
                             
-                            <div class="col-md-4" id="col-img">
-                                <a href="{{asset('/jobs')}}/{{$job->id_job}}" id="title" style="color:#000099">
+                            <div class="col-md-4" id="col-img" style="text-align:center; padding-top:5%; padding-bottom:5%">
+                                <a href="{{asset('/jobs')}}/{{$job->id_job}}" id="title">
                                     <img class="card-img" src="{{asset('lib/storage/app/avatar/'.$job->logo)}}">
                                 </a>
                             </div>
@@ -29,7 +29,7 @@
                             <div class="col-md-8">
                                 <div class="card-body" >
                                     <a href="{{asset('/jobs')}}/{{$job->id_job}}" id="title">
-                                        <h4 class="card-title">{{$job->title}}</h4>
+                                        <h4 class="card-title"><b>{{$job->title}}</b></h4>
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <p class="card-text" id="salary"><i class="fa fa-dollar"> {{$job->Salary}}</i></p>
@@ -39,6 +39,7 @@
                                                 <p class="card-text" id="city"><i class='fa fa-map-marker'></i> {{$job->location}}</p>
                                             </div>
                                         </div>
+                                        <br>
                                         <p class="card-text" id="description"> {{strip_tags($job->Job_description)}}</p>
                                     </a>
                                     <span id="{{$job->id_job}}">

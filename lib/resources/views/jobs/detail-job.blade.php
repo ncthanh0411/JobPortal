@@ -88,7 +88,7 @@
                     <h4><b>Job Description</b></h4>
                     <p>{!!$job_t->Job_description!!}</p>
                 </div>
-
+                <br>
                 <div class="col-lg-12">
                     <h4><b>Job Requirement</b></h4>
                     <p>{!!$job_t->Requirement!!}</p>
@@ -122,13 +122,13 @@
                     <hr style="border-top: 3px solid rgb(211, 211, 211);">
                     <div class="row">
                         <div class="col-lg-6">
-                            <p>Location:</p>
+                            <!-- <p>Location:</p> -->
                             <p>Technology:</p>
                             <p>Salary:</p>
                             <p>Expired Date:</p>
                         </div>
                         <div class="col-lg-6">
-                            <p>{{$job_t->location}}</p>
+                            <!-- <p>{{$job_t->location}}</p> -->
                             <p>{{$job_t->name}}</p>
                             <p>{{$job_t->Salary}}<span> $</span></p>
                             <p>{{$job_t->Expired_date}}</p>

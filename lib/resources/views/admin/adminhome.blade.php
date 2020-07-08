@@ -44,8 +44,8 @@
 											@else 
 												<td style="color:green">APPROVED</td>
 											@endif
-											<td>			
-												<a href="{{asset('admin/watch/'.$job->id_job)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Watch</a>
+											<td style="text-align:center;">			
+												<a href="{{asset('admin/watch/'.$job->id_job)}}" class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true" ></i> View</a>
 											</td>
 									@endforeach
 										</tr>

@@ -76,8 +76,7 @@
 							<div class="form-group">
 								<input class="form-control" placeholder="Password" name="password" type="password" value="">
 							</div>
-							<span style="color: rgb(170, 170, 170);">Not registered? </span><a href="{{asset('register')}}">Create an account.</a>
-							<br>
+							
 							<br>
 							<input type="submit" name="submit" value="Login" class="btn btn-primary" > 
 						</fieldset>
