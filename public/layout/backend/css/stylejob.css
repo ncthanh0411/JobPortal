@@ -2,6 +2,9 @@ body {
     font-family: Arial;
 }
 /**************************************************************/
+.bao .card-img{
+    width: 100%;
+}
 
 .bao .fa-heart:hover{
 	color: #f44336 !important;
@@ -39,15 +42,18 @@ body {
 .bao #title{
 	color: #000099;
 }
-.bao .card-body a:hover, #salary:hover,#title:hover{
-	color: #ff0000;
+.bao .card-body a:hover{
+	color: #498df3;
 	text-decoration: none;
 }
 
 .bao h3.card-title{
 	margin-bottom: 5px;
-
 }
+.bao .card-title:hover{
+	color:red;
+}
+
 .bao #salary{
 	font-size: 14px;
 	margin-bottom: 10px;
@@ -79,8 +85,7 @@ body {
 	padding-left: 0px;
 }
 .bao #col-img{
-	border-right: 1px solid #f2f2f2;
-
+	width: 100%;
 }
 .bao #categories{
 	width: 300px;

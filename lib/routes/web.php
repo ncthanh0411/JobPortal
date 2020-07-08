@@ -65,15 +65,28 @@ Route::group(['namespace'=>'Admin'],function(){
     
         
         //Admin approve jobs---------------------------------------------------------------
+        
         Route::get('watch/{id}','AdminApproveController@getdetail');
         Route::post('watch/{id}','AdminApproveController@postdetail');
-        
+
+        //Addmin manage account------------------------------------------------------------
+
+        Route::get('/account','AdminAccountController@getAccount');
+
+
+        //Admin add account Student---------------------------------------------------------
+        Route::group(['prefix'=>'CreateAccount'],function(){
+            Route::get('/','AdminAccountController@getCreateAccount');
+            Route::post('/','AdminAccountController@postCreateAccount');
+        });
 
     });
 });
 
 //Student route-----------------------------------------------------------------
 
+//Add CV route
+Route::post('/addCV', 'AddCVController@index');
 
 Route::group(['namespace'=>'Student'],function(){
     //Student logout
@@ -89,7 +102,7 @@ Route::group(['namespace'=>'Student'],function(){
         //Student dashboard----------------------------------------------------
         
         Route::get('/home','StudentHomeController@getHome')->middleware('CheckStudentLogedOut');
-
+        Route::get('/Company/{id}', 'StudentHomeController@getCompany');
     });
 });
 

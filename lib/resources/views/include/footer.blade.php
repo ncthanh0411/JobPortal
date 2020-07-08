@@ -5,7 +5,7 @@
                 <h3><a href="{{asset('/')}}" style="text-decoration: none; color: black">JobPortal</a></h3>
                 <p>Address: 19 Nguyen Huu Tho, Tan Phong Ward, District 7, Ho Chi Minh City.</p>
                 <p>Tel: 0979 036 420 - 0907 986 613 - 0773 787 085 - 0913 205 175.</p>
-                
+                <p>Email: jobportal.tdtu@gmail.com</p>
             </div>
             <div class="col-lg-3">
                 <h5>About JobPortal</h5>

@@ -37,10 +37,10 @@
 								
 								<div id="product-details" class="col-xs-12 col-sm-12 col-md-9">
 									
-									<p>Uername: {{$item->username}}</p>
+									<p>Username: {{$item->username}}</p>
 									<p>Location: {{$item->location}}</p> 
 									@if($item->phone=='')
-									<p>Phone: Update your phonenumber.</p>
+									<p>Phone: <span style="color:red">Update your phone number.<span></p>
 									@else
 									<p>Phone: {{$item->phone}}</p>
 									@endif
