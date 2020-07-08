@@ -4,7 +4,6 @@
 <style>
 .com-prof #logo {
     width: 100%;
-    border: 1px solid grey;
 }
 
 </style>
