@@ -16,6 +16,7 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand">Admin</a>
+				<a class="btn btn-info" href="{{asset('/')}}" style="margin-top:8px">Home</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> {{Auth::guard('admin')->user()->email}} <span class="caret"></span></a>

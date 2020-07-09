@@ -54,7 +54,7 @@
 										<label>Introduction</label>
 										<textarea class="ckeditor" required name="Introduction">{{$profile->introduction}}</textarea>
 									</div>
-									<input type="submit" name="submit" value="Edit" class="btn btn-primary">
+									<input type="submit" name="submit" value="Update" class="btn btn-primary">
 									<a href="{{asset('company/profile')}}" class="btn btn-danger">Cancel</a>
 								</div>
 							</div>
