@@ -13,10 +13,10 @@
                 </div>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-md-8 ">
                 @foreach($job as $job)
                 @if ($job->Status == 1)    
-                    <div class="card " id="list-right">
+                    <div class="card" id="list-right">
                         <div class="row">
                             
                             <div class="col-md-4" id="col-img" style="text-align:center; padding-top:5%; padding-bottom:5%">
