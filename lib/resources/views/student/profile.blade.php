@@ -131,6 +131,7 @@
                 </div>
                 
             </div>
+            
             <div class="tab-pane" id="cv">
                 <br>
                 <form method="post" action = "{{action('Student\StudentController@update', $st->id_stu)}}" enctype="multipart/form-data">
