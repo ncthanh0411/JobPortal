@@ -16,7 +16,7 @@ class CheckLogedIn
     public function handle($request, Closure $next)
     {
         if(Auth::check()){
-            return redirect()->intended('company/home');
+            return redirect()->intended('company/profile');
         }
         return $next($request);
     }
