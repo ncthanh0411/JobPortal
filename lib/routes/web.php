@@ -125,3 +125,8 @@ Route::get('/about', 'PagesController@about');
 Route::get('/choose', 'PagesController@choose');
 
 Route::resource('jobs','JobsController');
+
+//Categories
+Route::get('/{name}', 'CateController@getCate');
+
+Route::get('/search', 'CateController@search');
