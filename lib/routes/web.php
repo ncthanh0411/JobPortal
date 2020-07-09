@@ -14,6 +14,8 @@
 
 // Minh side-CompanyRoute
 Route::group(['namespace'=>'Company'],function(){
+    //Add CV route
+    Route::post('/addCV', 'AddCVController@index');
     //Company Login-------------------------------------------------------
     Route::group(['prefix'=>'login','middleware'=>'CheckLogedIn'],function(){
         Route::get('/','ComLoginController@getLogin');
@@ -29,6 +31,16 @@ Route::group(['namespace'=>'Company'],function(){
             Route::get('/addJob','ComListJobController@addJob');
             Route::get('/updateJob/{id}','ComListJobController@updateJob');
         });
+
+
+        
+        //Manage CV from Company
+        Route::group(['prefix'=>'watchcv'], function(){
+            Route::get('/','AddCVController@companyIndex');
+            Route::get('/student/{id}','AddCVController@getStudent');
+        });
+
+
         ///
         Route::group(['prefix'=>'profile'],function(){
             Route::get('/','ComProfileController@getComProfile');
@@ -85,8 +97,7 @@ Route::group(['namespace'=>'Admin'],function(){
 
 //Student route-----------------------------------------------------------------
 
-//Add CV route
-Route::post('/addCV', 'AddCVController@index');
+
 
 Route::group(['namespace'=>'Student'],function(){
     //Student logout
