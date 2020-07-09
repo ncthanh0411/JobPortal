@@ -25,7 +25,7 @@ Route::group(['namespace'=>'Company'],function(){
     Route::get('logout','ComHomeController@getLogout');
     //Route for home, list-job, profile
     Route::group(['prefix'=>'company','middleware'=>'CheckLogedOut'], function(){
-        Route::get('home','ComHomeController@getHome');
+        // Route::get('home','ComHomeController@getHome');
         Route::group(['prefix'=>'listjob'], function(){
             Route::get('/','ComListJobController@getListJob');
             Route::get('/addJob','ComListJobController@addJob');

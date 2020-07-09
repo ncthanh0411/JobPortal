@@ -8,9 +8,9 @@ use Auth;
 class ComHomeController extends Controller
 {
     //
-    public function getHome(){
-        return view('backend.index');
-    }
+    // public function getHome(){
+    //     return view('backend.index');
+    // }
 
     public function getLogout(){
         Auth::logout();

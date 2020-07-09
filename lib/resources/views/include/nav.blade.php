@@ -39,7 +39,7 @@
                     <a class="nav-link" href="{{asset('admin/home')}}"><i class="fas fa-desktop"></i></a>
                 @elseif(isset(auth()->user()->id_com))
                
-                    <a class="nav-link" href="{{asset('company/home')}}"><i class="fas fa-laptop"></i></a>
+                    <a class="nav-link" href="{{asset('company/profile')}}"><i class="fas fa-laptop"></i></a>
    
                 
         
