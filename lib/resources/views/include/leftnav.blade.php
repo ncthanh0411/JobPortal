@@ -11,11 +11,13 @@
     
     <div class="card-text" id="text-cate" style="margin-top:5px">
         @foreach($categories as $cate)
+        <a href="{{asset('jobs')}}/{{$cate->name}}" style="text-decoration: none">
             <div class="row">
                 <div class="col-md-12" id="list-cate">
                     <button type="button" class="btn btn-outline-dark" id="categories">{{$cate->name}}</button>
                 </div>
             </div>
+        </a>
         @endforeach
     </div>
    
