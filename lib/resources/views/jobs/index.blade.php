@@ -21,7 +21,7 @@
                             
                             <div class="col-md-4" id="col-img" style="text-align:center; padding-top:5%; padding-bottom:5%">
                                 <a href="{{asset('/jobs')}}/{{$job->id_job}}" id="title">
-                                    <img class="card-img" src="{{asset('lib/storage/app/avatar/'.$job->logo)}}">
+                                    <img class="card-img" src="{{asset('lib/storage/app/avatar/'.$job->logo)}}" style="margin:20px">
                                 </a>
                             </div>
 

@@ -97,6 +97,7 @@
 
             <div class="col-lg-4">
                 <img id="logo" src="{{asset('lib/storage/app/avatar/'.$job_t->logo)}}">
+                <br>
                 <div class="buttons">
                 @if(isset(Auth::guard('student')->user()->id_stu))
                     @foreach ($manage as $ma)
@@ -117,6 +118,7 @@
                     <a href="{{asset('student/login')}}"><button class="btn-hover color-1">APPLY</button></a>
                 @endif
                 </div>
+                <br>
                 <div class="info">
                     <h4 style="text-align: center; font-weight: bold;">Job Info</h4>
                     <hr style="border-top: 3px solid rgb(211, 211, 211);">
@@ -159,7 +161,7 @@
                     </svg>{{strip_tags($job_t->introduction)}}</p>
                     
                     <div style="width: 100%; text-align: right;">
-                        <button type="button" class="btn btn-light"><a href="{{asset('student/Company/'.$job_t->id_com)}}" style="text-decoration: none">See more</a></button>
+                        <a href="{{asset('student/Company/'.$job_t->id_com)}}" style="text-decoration: none"><button type="button" class="btn btn-light">See more</button></a>
                     </div>
                 </div>
             </div>

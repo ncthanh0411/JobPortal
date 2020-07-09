@@ -128,13 +128,13 @@
                 <div class="card" id="list-right">
                     <div class="row">
                         
-                        <div class="col-md-4" id="col-img" style="text-align:center; padding-top:5%; padding-bottom:5%">
+                        <div class="col-md-3" id="col-img" style="text-align:center; padding-top:5%; padding-bottom:5%">
                             <a href="{{asset('/jobs')}}/{{$job->id_job}}" id="title">
                                 <img class="card-img" src="{{asset('lib/storage/app/avatar/'.$job->logo)}}">
                             </a>
                         </div>
                         
-                        <div class="col-md-8" >
+                        <div class="col-md-9" >
                             <div class="card-body" >
                                 <a href="{{asset('/jobs')}}/{{$job->id_job}}" id="title" style="text-decoration: none; color:black">
                                     <h4 class="card-title"><b>{{$job->title}}</b></h4>
