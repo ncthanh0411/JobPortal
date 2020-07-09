@@ -8,12 +8,16 @@
             @foreach($com1 as $com2)
                 <div class="col-lg-3">
                     <a href="{{asset('student/Company/'.$com2->id_com)}}" style="text-decoration:none">
-                    <div class="container">
-                        <img src="{{asset('lib/storage/app/avatar/'.$com2->logo)}}" style="width:100%; ">
-                    </div>
-                    <div class="container">
-                        <h5><b>{{$com2->companyname}}</b></h5>
-                    </div>
+                        <div class="col-lg-12" style="height: 60%; ">
+                            <div class="container" id="logo" style="text-align:center; ">
+                                <img src="{{asset('lib/storage/app/avatar/'.$com2->logo)}}" style="width:100%; ">
+                            </div>    
+                        </div>
+                    
+                        <br>
+                        <div class="container"">
+                            <h5 style="text-align:center"><b>{{$com2->companyname}}</b></h5>
+                        </div>
                     </a>
                 </div>
             @endforeach

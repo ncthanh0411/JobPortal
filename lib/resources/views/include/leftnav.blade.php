@@ -1,5 +1,5 @@
 <div class="card-body">
-    <div class="card-title">
+    <div class="card-title" >
         <div class="input-group md-form form-sm form-1 pl-0">
             <div class="input-group-prepend">
                 <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search"
@@ -9,7 +9,7 @@
         </div>
     </div>
     
-    <div class="card-text" id="text-cate">
+    <div class="card-text" id="text-cate" style="margin-top:5px">
         @foreach($categories as $cate)
             <div class="row">
                 <div class="col-md-12" id="list-cate">

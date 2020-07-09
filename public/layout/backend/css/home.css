@@ -18,3 +18,12 @@
     padding: 20px;
     text-align: center;
 }
+
+.home .card-img {
+    height: 60%;
+}
+
+.home .row .col-lg-3 .container #name {
+    text-align: center; 
+    color: red;
+}

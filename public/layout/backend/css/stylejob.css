@@ -14,9 +14,8 @@ body {
 	margin-top: 200px;
 }
 .bao .card-img{
-	max-width: 200px;
-	height: 200px;
-
+	width: 100%;
+    text-align: center;
 }
 .bao .col-md-4{
 	text-align: center;
