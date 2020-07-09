@@ -23,7 +23,7 @@
 											<th>ID</th>
 											<th width="30%">Job tilte</th>
 											<th>Salary</th>
-											<th>Amount</th>
+											<th>Expired date</th>
 											<th>Category</th>
 											<th>Status</th>
 											<th>Option</th>

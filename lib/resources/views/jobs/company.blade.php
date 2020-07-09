@@ -15,8 +15,8 @@
                     <img id="logo" src="{{asset('lib/storage/app/avatar/'.$job_t->logo)}}">
                 </div>
                 <div class="col-lg-9">
-                    <div class="col-lg-12">
-                        <h3><b>{{$job_t->companyname}}</b></h3>
+                    <div class="col-lg-12" style="color:gray;">
+                        <h3 style="color:black;"><b>{{$job_t->companyname}}</b></h3>
                         <p><svg width="1rem" height="1rem" viewBox="0 0 16 16" class="bi bi-building" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694L1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
                             <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
@@ -29,8 +29,9 @@
                         <p><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
                         </svg> {{$job_t->email}}</p>
+                        <hr style="border-top: 3px dashed #bbb;">
                     </div>
-                    <hr style="border-top: 3px dashed #bbb;">
+                    
                     <div class="col-lg-12">
                         <h5><b>Description</b></h5>
                         <p>{!!$job_t->introduction!!}</p>
@@ -38,9 +39,6 @@
                 </div>
                 @endforeach
             </div>
-            <hr style="border-top: 3px dashed #bbb;">
-            <h5><b>Jobs</b></h5>
-            <!-- list -->
         </div>
     </div>
 @endsection
