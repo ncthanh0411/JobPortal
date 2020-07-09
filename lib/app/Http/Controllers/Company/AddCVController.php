@@ -27,7 +27,7 @@ class AddCVController extends Controller
         $CV = DB::table('manage_applies')->join('jobs', 'manage_applies.jobs_id', '=', 'jobs.id_job')
         ->join('company_users', 'jobs.company_id', '=', 'company_users.id_com')
         ->join('students', 'manage_applies.student_id', '=', 'students.id_stu')
-        ->where('id_com', $com_id)->get();
+        ->where('id_com', $com_id)->orderBy('id_apply','desc')->get();
         return view('backend.Cvcommanage') -> with('data',$CV);
     }
     public function getStudent($id){
