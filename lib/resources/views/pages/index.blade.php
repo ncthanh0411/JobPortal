@@ -6,7 +6,7 @@
         <h3>Employers</h3>
         <div class="row">
             @foreach($com1 as $com2)
-                <div class="col-lg-3">
+                <div class="col-lg-3" >
                     <a href="{{asset('student/Company/'.$com2->id_com)}}" style="text-decoration:none">
                         <div class="col-lg-12" style="height: 60%; ">
                             <div class="container" id="logo" style="text-align:center; ">
@@ -15,7 +15,7 @@
                         </div>
                     
                         <br>
-                        <div class="container"">
+                        <div class="container" style="height: 30%; ">
                             <h5 style="text-align:center"><b>{{$com2->companyname}}</b></h5>
                         </div>
                     </a>
