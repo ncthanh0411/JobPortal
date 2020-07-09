@@ -36,6 +36,7 @@
 			<!-- <li><a href="{{asset('company/home/')}}"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li> -->
 			<li><a href="{{asset('company/profile/')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Profile</a></li>
 			<li><a href="{{asset('company/listjob/')}}"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>  List of Jobs</a></li>
+			<li><a href="{{asset('company/watchcv/')}}"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg>  Manage CV Apply</a></li>
 			
 			<li role="presentation" class="divider"></li>
 		
