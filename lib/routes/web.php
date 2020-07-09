@@ -109,7 +109,12 @@ Route::group(['namespace'=>'Student'],function(){
             Route::get('/','StudentLoginController@getLogin');
             Route::post('/','StudentLoginController@postLogin');
        }); 
-        Route::resource('/profile', 'StudentController')->middleware('CheckStudentLogedOut');
+        Route::get('/profile', 'StudentController@getProfile')->middleware('CheckStudentLogedOut');
+        Route::post('/update-profile/{id}', 'StudentController@update')->middleware('CheckStudentLogedOut');
+        Route::get('/changePwd', 'StudentController@getPwd')->middleware('CheckStudentLogedOut');
+        Route::get('/Wishlist', 'StudentController@getWishlist')->middleware('CheckStudentLogedOut');
+        Route::get('/Cv', 'StudentController@getCv')->middleware('CheckStudentLogedOut');
+        Route::post('/Cv/{id}', 'StudentController@postCv')->middleware('CheckStudentLogedOut');
         //Student dashboard----------------------------------------------------
         
         Route::get('/home','StudentHomeController@getHome')->middleware('CheckStudentLogedOut');

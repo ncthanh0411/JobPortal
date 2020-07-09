@@ -14,6 +14,7 @@
             </div>
 
             <div class="col-md-8">
+            <div class="card overflow-auto" style="padding: 20px;">
                 @foreach($job as $job)
                 @if ($job->Status == 1)    
                     <div class="card " id="list-right">
@@ -68,6 +69,7 @@
                     </div>
                     @endif
                 @endforeach
+            </div>
             </div>
         </div>
     </div>

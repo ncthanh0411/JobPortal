@@ -13,54 +13,46 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function getProfile()
+    {   
+        
         $student_id= Auth::guard('student')->user()->id_stu;
         $student = Student::find($student_id);
         return view('student.profile')->with('st',$student);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function getPwd()
+    {   
+        
+        $student_id= Auth::guard('student')->user()->id_stu;
+        $student = Student::find($student_id);
+        return view('student.changePwd')->with('st',$student);
+    }
+    public function getWishlist()
+    {   
+        
+        $student_id= Auth::guard('student')->user()->id_stu;
+        $student = Student::find($student_id);
+        return view('student.Wishlist')->with('st',$student);
+    }
+    public function getCv()
+    {   
+        
+        $student_id= Auth::guard('student')->user()->id_stu;
+        $student = Student::find($student_id);
+        return view('student.Cv')->with('st',$student);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function postCv( Request $request, $id){
+        $student = new Student;
+        if($request->hasFile('cv')){
+    		$cv=$request->cv->getClientOriginalName();
+    		$arr['cv']= $cv;
+    		$request->cv->storeAs('cv',$cv);
+        }
+        $student::where('id_stu',$id)->update($arr);
+        return redirect() -> intended('student/Cv')->with('success','Profile updated');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -81,23 +73,14 @@ class StudentController extends Controller
             $arr['phone']= $request->get('phone');
         }
 
-        if($request->hasFile('cv')){
-    		$cv=$request->cv->getClientOriginalName();
-    		$arr['cv']= $cv;
-    		$request->cv->storeAs('cv',$cv);
-        }
+        // if($request->hasFile('cv')){
+    	// 	$cv=$request->cv->getClientOriginalName();
+    	// 	$arr['cv']= $cv;
+    	// 	$request->cv->storeAs('cv',$cv);
+        // }
         $student::where('id_stu',$id)->update($arr);
         return redirect() -> intended('student/profile')->with('success','Profile updated');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
 }

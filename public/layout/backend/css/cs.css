@@ -1,0 +1,151 @@
+body{
+    margin:0;
+}
+a.borderless{
+	border: none;
+	
+}
+
+#left-pro div.card-body{
+	padding-bottom: 170px;
+}
+.list-group{
+	border-radius: 0;
+	margin-top: 40px;
+}
+
+#file{
+	height: 0;
+	overflow: hidden;
+	width: 0;
+
+}
+#file ,#selector{
+	margin-top: 20px;
+	background: #f15d22;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Poppins', sans-serif;
+	font-size: inherit;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	outline: none;
+	padding: 1rem 50px;
+	position: relative;
+	transition: all 0.3s;
+	vertical-align: middle;
+	
+}
+#file, #selector:hover{
+	background-color: #f79159;
+
+}
+#selector{
+	background-color: #f79159;
+    box-shadow: 0 6px #f15d22;
+    transition: none;
+
+}
+#selector:hover{
+	box-shadow: 0 4px #f15d22;
+    top: 2px;
+}
+
+#wc{
+	height: 800px;
+}
+
+#left-2 .fa-heart:hover{
+	color: #f44336 !important;
+}
+
+#left-2 .fa-heart{
+	margin-top: 200px;
+}
+#left-2 .card-img{
+	max-width: 200px;
+	height: 200px;
+
+}
+
+
+#left-2 .fa-heart-o{
+	color: #00000030;
+	cursor: pointer;
+	float: right;
+	margin-top: 0;
+}
+#left-2 .fa-heart{
+	color: red;
+	cursor: pointer;
+	float: right;
+	margin-top: 0;
+}
+#left-2 .card-body a{
+	color: black;
+	text-decoration: none;
+
+}
+#left-2 #title{
+	color: #000099;
+}
+#left-2 .card-body a:hover, #salary:hover,#title:hover{
+	color: #ff0000;
+	text-decoration: none;
+}
+
+#left-2 h3.card-title{
+	margin-bottom: 5px;
+
+}
+#left-2 #salary{
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+#left-2 #description{
+	margin-bottom: 40px;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+#left-2 #list-right  {
+	margin-top: 10px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+#left-2 #list-right:hover{
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+#left-2 div.col-md-2{
+	padding-right: 0;
+}
+
+#left-2 #city{
+	font-size: 14px;
+	padding-left: 0px;
+}
+#left-2 #col-img{
+	border-right: 1px solid #f2f2f2;
+
+}
+#left-2 #categories{
+	width: 300px;
+	height: 100px;
+	margin: 2px 2px 2px;
+	border: 1px solid #f2f2f2;
+}
+#left-2 #list-cate{
+	padding: 0 0;
+}
+#left-2 #text-cate{
+	margin-top: 100px;
+}
+#left-2 #card-left{
+	margin-top: 10px;
+}
