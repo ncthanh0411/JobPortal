@@ -63,9 +63,10 @@ class StudentController extends Controller
         if(strcmp($request->get('currentpass'),$request->get('newpass')) == 0){
             return back()->with('error','Your current password cannot be same with the new password');
         }
-        $data = $request->validate([
+        $request->validate([
             'currentpass' =>'required',
-            'newpass' => 'required|confirmed'
+            'newpass' => 'required',
+            'verifypass' => 'required|same:newpass',
 
         ]);
         $user = Auth::guard('student')->user();

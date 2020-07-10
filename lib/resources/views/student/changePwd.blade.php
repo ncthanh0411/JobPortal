@@ -10,7 +10,7 @@
 @endforeach
 @if(session('error'))
     <div class="alert alert-danger" role="alert">
-    <strong>ERROR: </strong>{{session('error')}}
+        <strong>ERROR: </strong>{{session('error')}}
     </div>
 @endif
 @if(session()->get('message'))
