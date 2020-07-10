@@ -5,6 +5,11 @@
 <link href="css/cs.css" rel="stylesheet">
 
 <div class="container mx-6">
+@if(\Session::has('success'))
+    <div class = "alert alert-success" role="alert">
+       {{ session('success')}}
+    </div>
+@endif
   <div class="row">
     @include('include.profile-nav')
     <div class="col-md-8" id="left-pro">
@@ -61,11 +66,7 @@
                                 
                             </div>
                         </div>
-                        @if(\Session::has('success'))
-                            <div class = "alert alert-success">
-                                <p> {{ Session::get('success')}}</p>
-                            </div>
-                        @endif
+                        
                     </form>
                     </div>
                 </div>
@@ -75,6 +76,7 @@
     </div>
   </div>
 </div>
+
 
 
 @endsection

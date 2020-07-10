@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Student;
 use Auth;
+use Hash;
 class StudentController extends Controller
 {
     /**
@@ -53,6 +54,24 @@ class StudentController extends Controller
         $student::where('id_stu',$id)->update($arr);
         return redirect() -> intended('student/Cv')->with('success','Profile updated');
 
+    }
+
+    public function changePwd(Request $request){
+        if(!(Hash::check($request->get('currentpass'),Auth::guard('student')->user()->password))){
+            return back()->with('error','Your current password does not match with what you provided');
+        }
+        if(strcmp($request->get('currentpass'),$request->get('newpass')) == 0){
+            return back()->with('error','Your current password cannot be same with the new password');
+        }
+        
+       $user = Auth::guard('student')->user();
+       $user->password = Hash::make($request->get('newpass'));
+
+       $user->save();
+        return back()->with('message','Password changed successfully');
+
+        
+        
     }
 
     /**

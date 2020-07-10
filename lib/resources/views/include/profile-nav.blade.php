@@ -9,7 +9,7 @@
             </div>
             <div class="list-group " >
                
-                <a href="{{asset('student/profile')}}" class="list-group-item list-group-item-action active borderless"><i class="fas fa-address-card"></i>    Profile</a>
+                <a href="{{asset('student/profile')}}" class="list-group-item list-group-item-action borderless"><i class="fas fa-address-card"></i>    Profile</a>
                
                 <a href="{{asset('student/changePwd')}}" class="list-group-item list-group-item-action borderless"><i class="fa fa-key" aria-hidden="true"></i>    Change Password</a>
                 
@@ -24,7 +24,11 @@
 </div>
 
 <script>
-    $(document).on('click','.list-group a',function(){
-        $(this).addClass('active').siblings().removeClass('active')
-    })
+    $(document).ready(function() {
+        $('a').click(function() {
+            $('a.active').removeClass("active");
+            $(this).addClass("active");
+        });
+    });
 </script>
+
