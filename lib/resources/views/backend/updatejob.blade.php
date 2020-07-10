@@ -72,7 +72,7 @@
 					                    </select>
 									</div>
                                     <input type="submit" name="submit" value="Update" class="btn btn-primary">
-									<a href="{{asset('admin/listjob')}}" class="btn btn-danger">Cancel</a>
+									<a href="{{asset('company/listjob')}}" class="btn btn-danger">Cancel</a>
 								</div>
 							</div>
 						</form>

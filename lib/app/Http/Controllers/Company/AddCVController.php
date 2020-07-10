@@ -42,5 +42,11 @@ class AddCVController extends Controller
     }
 
 
+    // public function postStudent( Request $request, $id){
+    //     $apply = new Manage_apply;
+    //     $arr['status'] = 1;
+    //     $apply::where('student_id   ',$id)->update($arr);
+    //     return redirect('company/watchcv');
 
+    // }
 }

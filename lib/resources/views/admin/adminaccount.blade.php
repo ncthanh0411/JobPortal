@@ -40,8 +40,8 @@
 											
 											
 											<td style="text-align:center">
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Watch CV</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+												<a href="{{asset('admin/watchcv/'.$student->id_stu)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Watch CV</a>
+												<a onclick="return confirm('Are you sure?')" href="{{asset('admin/delete/'.$student->id_stu)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 											</td>
 										</tr>
 									@endforeach	

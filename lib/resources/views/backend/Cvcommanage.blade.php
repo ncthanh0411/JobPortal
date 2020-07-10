@@ -24,6 +24,7 @@
 											<th width="30%">Job tilte</th>
 											<th>Name Student</th>
 											<th>Day Create</th>
+											
 											<th>Watch CV</th>
 											
 										</tr>
@@ -36,17 +37,26 @@
 												<td>{!!$job->title!!}</td>											
 												<td>{{$job->name}}</td>
 												<td>{{$job->Expired_date}}</td>
+
+												<!-- @if ($job->status == 0)
+													<td style="color:red">PENDING</td>
+												
+												@else 
+													<td style="color:green">APPROVED</td>
+												@endif -->
+
 												<td style="text-align:center">
 
 													<a href="{{asset('company/watchcv/student')}}/{{$job->student_id}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i>Watch CV</a>
 												</td>
-				
+
 											</tr>
 										@endforeach	
 									</tbody>
 
 	
-								</table>							
+								</table>
+															
 							</div>
 						</div>
 						<div class="clearfix"></div>

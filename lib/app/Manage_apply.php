@@ -12,6 +12,6 @@ class Manage_apply extends Model
      public $primaryKey = 'id_apply';
      // Timestamps
      public $timestamps = true;
-     protected $fillable = ['jobs_id', 'student_id'];
+     protected $fillable = ['jobs_id', 'student_id','status'];
 
 }

@@ -35,7 +35,7 @@
 			<li role="presentation" class="divider"></li>
 			<li><a href="{{asset('admin/home/')}}"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> List of Jobs</a></li>
 			<li><a href="{{asset('admin/account/')}}"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>  List of Students</a></li>
-			<li><a href="{{asset('admin/account/')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Manage Applies</a></li>
+			<li><a href="{{asset('admin/ManageApply/')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Manage Applies</a></li>
 			<li role="presentation" class="divider"></li>
 		</ul>
 		

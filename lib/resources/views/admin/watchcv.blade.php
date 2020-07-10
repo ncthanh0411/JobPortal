@@ -1,9 +1,7 @@
-@extends('backend.master')
-@section('title','Company Profile')
+@extends('admin.masterad')
+@section('title','DashBoard')
 @section('main')
-
-		
-	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">CV Student</h1>
@@ -18,6 +16,9 @@
 					<div class="panel-body">
 							<div class="row" style="margin-bottom:40px">
 								<div class="col-xs-8">
+                                @foreach ($CV as $data)
+                                    
+                                
 									<div class="form-group" >
 										<label>Student</label>
 										<input required type="text" name="name" class="form-control" value="{{$data->name}}" disabled>
@@ -39,8 +40,9 @@
 									@else
 										<embed src="{{asset('lib/storage/app/cv/'.$data->CV)}}" width="100%" height="700px" />
 									@endif
-                                    
+                                @endforeach 
 								</div>
+
 							</div>
 							<!-- <form method="post" enctype="multipart/form-data"> 
 								{{ csrf_field() }}
@@ -53,6 +55,5 @@
 			</div>
 		</div><!--/.row-->
 	</div>	<!--/.main-->
-
 
 @stop

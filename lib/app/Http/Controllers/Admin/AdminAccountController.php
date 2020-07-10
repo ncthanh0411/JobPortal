@@ -65,4 +65,16 @@ class AdminAccountController extends Controller
         return redirect()->back()->with('thanhcong','Created and send successfully !!!');
         
     }
+    public function getcv(Request $request,$id){
+        
+        $data['CV'] = DB::table('students')->where([ ['id_stu', '=', $id] ])->get();
+
+
+        return view('admin.watchcv',$data);
+    }
+    public function getDelete($id){
+        Student::destroy($id);
+
+        return back();
+    }
 }

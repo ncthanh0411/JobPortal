@@ -38,6 +38,7 @@ Route::group(['namespace'=>'Company'],function(){
         Route::group(['prefix'=>'watchcv'], function(){
             Route::get('/','AddCVController@companyIndex');
             Route::get('/student/{id}','AddCVController@getStudent');
+            // Route::post('/student/{id}','AddCVController@postStudent');
         });
 
 
@@ -81,6 +82,10 @@ Route::group(['namespace'=>'Admin'],function(){
         Route::get('watch/{id}','AdminApproveController@getdetail');
         Route::post('watch/{id}','AdminApproveController@postdetail');
 
+        Route::get('watchcv/{id}','AdminAccountController@getcv');
+
+        Route::get('delete/{id}','AdminAccountController@getDelete');
+
         //Addmin manage account------------------------------------------------------------
 
         Route::get('/account','AdminAccountController@getAccount');
@@ -91,7 +96,9 @@ Route::group(['namespace'=>'Admin'],function(){
             Route::get('/','AdminAccountController@getCreateAccount');
             Route::post('/','AdminAccountController@postCreateAccount');
         });
-
+        Route::group(['prefix'=>'ManageApply'],function(){
+            Route::get('/','AdminManageController@geManage');
+        });
     });
 });
 
