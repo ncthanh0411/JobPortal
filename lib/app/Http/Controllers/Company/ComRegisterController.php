@@ -46,7 +46,7 @@ class ComRegisterController extends Controller
 
             $user->save();
 
-            return redirect()->back()->with('thanhcong','Created successfully !!!');
+            return redirect()-> intended('login')->with('thanhcong','Created successfully !!!');
 
 
 

@@ -73,11 +73,7 @@
 					</div>
 					@endif
 
-					@if(session('thanhcong'))
-						<div class="alert alert-success">
-							{{session('thanhcong')}}
-						</div>
-					@endif
+					
 
 					<form role="form"  method="POST">
 						<input type="hidden" name="_token" value={{csrf_token()}}>
