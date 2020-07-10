@@ -9,6 +9,7 @@ use App\User;
 use DB;
 use Auth;
 use App\Manage_apply;
+use App\Student;
 
 class JobsController extends Controller
 {
@@ -77,8 +78,9 @@ class JobsController extends Controller
 
         if(isset(Auth::guard('student')->user()->id_stu)) {
             $manage = DB::table('manage_applies')->where('student_id', '=', Auth::guard('student')->user()->id_stu)->get();
+            $student =  Student::find(Auth::guard('student')->user()->id_stu);
             $temp = 0;
-            return view('jobs.detail-job', compact('job_t','manage','temp'));
+            return view('jobs.detail-job', compact('job_t','manage','temp','student'));
         }
         else{
             return view('jobs.detail-job', compact('job_t'));
