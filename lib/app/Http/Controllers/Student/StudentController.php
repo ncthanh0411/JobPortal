@@ -63,11 +63,15 @@ class StudentController extends Controller
         if(strcmp($request->get('currentpass'),$request->get('newpass')) == 0){
             return back()->with('error','Your current password cannot be same with the new password');
         }
-        
-       $user = Auth::guard('student')->user();
-       $user->password = Hash::make($request->get('newpass'));
+        $data = $request->validate([
+            'currentpass' =>'required',
+            'newpass' => 'required|confirmed'
 
-       $user->save();
+        ]);
+        $user = Auth::guard('student')->user();
+        $user->password = Hash::make($request->get('newpass'));
+
+        $user->save();
         return back()->with('message','Password changed successfully');
 
         

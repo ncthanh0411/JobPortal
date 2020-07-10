@@ -3,6 +3,11 @@
 @section('content')
 
 <link href="css/cs.css" rel="stylesheet">
+@foreach ($errors->all() as $error)
+    <div class="alert alert-danger" role="alert">
+    <strong>ERROR: </strong> {{ $error }}
+    </div>
+@endforeach
 @if(session('error'))
     <div class="alert alert-danger" role="alert">
     <strong>ERROR: </strong>{{session('error')}}
