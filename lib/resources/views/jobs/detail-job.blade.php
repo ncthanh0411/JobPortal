@@ -100,20 +100,24 @@
                 <br>
                 <div class="buttons">
                 @if(isset(Auth::guard('student')->user()->id_stu))
-                    @foreach ($manage as $ma)
-                        @if($ma->jobs_id == $job_t->id_job)
-                            <p hidden>{{$temp = 1}}</p>
-                            <button id = "btnalready" class="btn-hover color-1" onclick="myFunction()">Apply</button>
+                    @if($student->CV == "")
+                        <button id = "btnempty" class="btn-hover color-1" onclick="myFunctionem()">Apply</button>
+                    @else
+                        @foreach ($manage as $ma)
+                            @if($ma->jobs_id == $job_t->id_job)
+                                <p hidden>{{$temp = 1}}</p>
+                                <button id = "btnalready" class="btn-hover color-1" onclick="myFunction()">Apply</button>
+                            @endif
+                        @endforeach
+                        @if( $temp == 0)
+                            <form method="post" action = "{{url('addCV')}}" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                <input type="hidden" id = "jobID" name = "jobID" value = "{{ $job_t->id_job }}">
+                                <input type="hidden" id = "studentID" name = "studentID" value = "{{ Auth::guard('student')->user()->id_stu }}">
+                                <input type="submit" name="submit" value="APPLY" class="btn-hover color-1">
+                            </form>
                         @endif
-                    @endforeach
-                    @if( $temp == 0)
-                        <form method="post" action = "{{url('addCV')}}" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                            <input type="hidden" id = "jobID" name = "jobID" value = "{{ $job_t->id_job }}">
-                            <input type="hidden" id = "studentID" name = "studentID" value = "{{ Auth::guard('student')->user()->id_stu }}">
-                            <input type="submit" name="submit" value="APPLY" class="btn-hover color-1">
-                        </form>
-                    @endif
+                    @endif 
                 @elseif(isset(Auth::guard('admin')->user()->id) == false and isset(auth()->user()->id_com) == false)
                     <a href="{{asset('student/login')}}"><button class="btn-hover color-1">APPLY</button></a>
                 @endif
@@ -175,6 +179,10 @@
 		
       alert('You have already apply CV to this job');
     }
+    function myFunctionem() {
+		
+        alert('Please upload your CV!');
+      }
 </script>
 
 @endsection
