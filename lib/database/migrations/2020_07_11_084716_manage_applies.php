@@ -15,10 +15,10 @@ class ManageApplies extends Migration
     {
         Schema::create('manage_applies', function (Blueprint $table) {
             $table->bigIncrements('id_apply');
-            $table->unsignedBigInteger('company_id')->unsigned();
-            $table->foreign('company_id')
-                ->references('id_com')
-                ->on('company_users');
+            $table->unsignedBigInteger('jobs_id')->unsigned();
+            $table->foreign('jobs_id')
+                ->references('id_job')
+                ->on('jobs');
 
             $table->integer('status')->default(0);
 
