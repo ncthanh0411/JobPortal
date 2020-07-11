@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 10, 2020 lúc 06:23 PM
--- Phiên bản máy phục vụ: 10.4.13-MariaDB
--- Phiên bản PHP: 7.4.7
+-- Host: 127.0.0.1
+-- Generation Time: Jul 11, 2020 at 11:07 AM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `job-portal`
+-- Database: `job-portal`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
@@ -37,7 +38,7 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `admins`
+-- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`id`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -46,7 +47,7 @@ INSERT INTO `admins` (`id`, `email`, `password`, `remember_token`, `created_at`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -57,7 +58,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id_cate`, `name`, `created_at`, `updated_at`) VALUES
@@ -69,7 +70,7 @@ INSERT INTO `categories` (`id_cate`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `company_users`
+-- Table structure for table `company_users`
 --
 
 CREATE TABLE `company_users` (
@@ -88,7 +89,7 @@ CREATE TABLE `company_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `company_users`
+-- Dumping data for table `company_users`
 --
 
 INSERT INTO `company_users` (`id_com`, `username`, `companyname`, `email`, `password`, `phone`, `location`, `introduction`, `logo`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -96,13 +97,12 @@ INSERT INTO `company_users` (`id_com`, `username`, `companyname`, `email`, `pass
 (2, 'minh', 'LoliTech', '2018minh@gmail.com', '$2y$10$tqBKjNWDUMEC9hHHPArA7eW7rEXqLjaO6K8npWypdYEd1rMy7kqAC', '0979215152', 'district 1', '', 'tải xuống.png', NULL, '2020-07-02 23:26:29', '2020-07-09 09:06:57'),
 (4, 'fpt_admin', 'FPT Software', 'fpt@gmail.com', '$2y$10$B2lgo3gcvWubIYOymbWcEOsaC0Dl4mxC741mFGykLZYhqjTp/dDq2', '0979036420', 'Ho Chi Minh, Ha Noi, Da Nang, Others', '<p>FPT Software is part of FPT Corporation (FPT &ndash; HoSE) &ndash; the global leading technology, outsourcing and IT services group headquartered in Vietnam with nearly US$2 billion in revenue and more than 13,000 employees. Qualified with CMMI Level 5 &amp; ISO 27001:2013, ASPICE LEVEL 3, FPT Software delivers world-class services in Smart factory, Digital platform, RPA, AI, IoT, Enterprise Mobilization, Cloud, AR/VR, Embedded System, Managed service, Testing, Platform modernization, Business Applications, Application Service, BPO and more services globally from delivery centers across the United States, Japan, Europe, Korea, China, Australia, Vietnam and the Asia Pacific.&nbsp;<br />\r\n<br />\r\nIn 2017, FPT Software has been placed in top 10 of the ranking for three consecutive years. Among top 10, FPT Software is the only IT Company.&nbsp;</p>', 'LogoFPT-2017-copy-3042-1513928399.jpg', NULL, '2020-07-07 09:01:08', '2020-07-07 09:13:04'),
 (5, 'kms_admin', 'KMS Technology', 'kms@gmail.com', '$2y$10$sdoGy5hns8yfv9HboPghoutr05MIGYbjBwZSDGxGsQpUGWp0F/may', '0979036420', '123 Cong Hoa, ward 12, Tan Binh, Ho Chi Minh', '<p>KMS Technology, is a 10-year-old Global Technology company specialized in Software Outsourcing, Software Product Development, IT Solutions &amp; Consulting. Besides providing excellent Software Outsourcing services, KMS has launched awesome global products: QASymphony, Katalon Studio, Kobiton, Sprynkl and there will be others to come. Other companies under KMS umbrella: UpStar Labs is the startup incubation and investment; KMS Solutions focuses on technology consulting in the region.</p>\r\n\r\n<p>With the cozy working environment and the excellent leadership team, KMS has been building its team with 1000+ talents in Vietnam. Recently KMS was ranked as top 4 IT company and top 26 best places to work in Vietnam. We always strive to maximize the growth of our teams by recognizing every individual&rsquo;s strengths and building a career path for members.</p>\r\n\r\n<p>Join us to write your own success stories!</p>', 'KMS-logo3.jpg', NULL, '2020-07-07 09:46:16', '2020-07-07 09:50:11'),
-(6, 'vng_admin', 'VNG Corporation', 'vng@gmail.com', '$2y$10$vuJUpggPyYCT2xrFSjsJo.jJruC1S6cQy8BvQ6zXlho/Wpj1Kcmaq', '0979036420', 'VNG Campus, Tan Thuan Dong, District 7, Ho Chi Minh', '<p>VNG believes in the power of the Internet and sees it as its mission to bring Internet users meaningful experiences. Each day, millions of young Vietnamese entertain, network and make friends, shop online or engage in social activities through VNG products, which are the ways VNG creates value for the society.</p>', 'vng-logo-share-v2.jpg', NULL, '2020-07-07 09:56:39', '2020-07-07 09:57:41'),
-(7, 'Techcombank', 'Techcombank', 'gg@gmail.com', '$2y$10$QoqQVLlJc4ptTy9Tp8xtV.zHAm8cElAmwLOAVxPbN4ZIqhcS5bU/m', '', 'TP.HCM', '', '', NULL, '2020-07-10 08:54:33', '2020-07-10 08:54:33');
+(6, 'vng_admin', 'VNG Corporation', 'vng@gmail.com', '$2y$10$vuJUpggPyYCT2xrFSjsJo.jJruC1S6cQy8BvQ6zXlho/Wpj1Kcmaq', '0979036420', 'VNG Campus, Tan Thuan Dong, District 7, Ho Chi Minh', '<p>VNG believes in the power of the Internet and sees it as its mission to bring Internet users meaningful experiences. Each day, millions of young Vietnamese entertain, network and make friends, shop online or engage in social activities through VNG products, which are the ways VNG creates value for the society.</p>', 'vng-logo-share-v2.jpg', NULL, '2020-07-07 09:56:39', '2020-07-07 09:57:41');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `jobs`
+-- Table structure for table `jobs`
 --
 
 CREATE TABLE `jobs` (
@@ -120,7 +120,7 @@ CREATE TABLE `jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `jobs`
+-- Dumping data for table `jobs`
 --
 
 INSERT INTO `jobs` (`id_job`, `title`, `Salary`, `Job_description`, `Requirement`, `Expired_date`, `Status`, `company_id`, `categories_id`, `created_at`, `updated_at`) VALUES
@@ -135,7 +135,7 @@ INSERT INTO `jobs` (`id_job`, `title`, `Salary`, `Job_description`, `Requirement
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `manage_applies`
+-- Table structure for table `manage_applies`
 --
 
 CREATE TABLE `manage_applies` (
@@ -148,20 +148,17 @@ CREATE TABLE `manage_applies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `manage_applies`
+-- Dumping data for table `manage_applies`
 --
 
 INSERT INTO `manage_applies` (`id_apply`, `jobs_id`, `status`, `student_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 0, 5, '2020-07-07 08:14:26', '2020-07-07 08:14:26'),
-(2, 1, 0, 5, '2020-07-07 08:15:02', '2020-07-07 08:15:02'),
-(3, 1, 0, 5, '2020-07-07 08:16:36', '2020-07-07 08:16:36'),
-(4, 7, 0, 1, '2020-07-08 08:36:12', '2020-07-08 08:36:12'),
-(5, 13, 0, 1, '2020-07-10 08:51:03', '2020-07-10 08:51:03');
+(1, 13, 0, 5, '2020-07-11 01:48:07', '2020-07-11 01:48:07'),
+(2, 11, 0, 5, '2020-07-11 01:48:20', '2020-07-11 01:48:20');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -171,7 +168,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -182,12 +179,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2020_06_27_140836_create_company_users_table', 1),
 (6, '2020_06_27_143605_create_jobs_table', 1),
 (7, '2020_06_27_151351_create_manage_applies_table', 1),
-(8, '2020_06_27_151552_create_admins_table', 1);
+(8, '2020_06_27_151552_create_admins_table', 1),
+(9, '2020_07_11_082956_manage_applies', 2),
+(10, '2020_07_11_084716_manage_applies', 3);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -199,7 +198,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `students`
+-- Table structure for table `students`
 --
 
 CREATE TABLE `students` (
@@ -216,7 +215,7 @@ CREATE TABLE `students` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `students`
+-- Dumping data for table `students`
 --
 
 INSERT INTO `students` (`id_stu`, `email`, `password`, `name`, `phone`, `major`, `CV`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -224,14 +223,14 @@ INSERT INTO `students` (`id_stu`, `email`, `password`, `name`, `phone`, `major`,
 (2, '517H0066@gmail.com', '$2y$10$xAFjA.z.u/SrpXgsaT2XhO0wRUteuPyjOXwS9gH2V2QYpYNmRZ9zu', 'Le Tuan Minh', '', 'Software Engineering', '', NULL, '2020-07-06 19:16:27', '2020-07-06 19:16:27'),
 (3, '517H0055@gmail.com', '$2y$10$WsYaJkfTmwBubj96UukPeevoVAa2fp7EXeDPKI09X33T8lcWjq.pm', 'Nguyen Hoang Khai', '', 'Software Engineering', '', NULL, '2020-07-07 00:34:12', '2020-07-07 00:34:12'),
 (4, '517H0045@gmail.com', '$2y$10$JxaLcU0iqwZNZ2KOQAjex.cy6YLf5hNZ8/ARTgyeF3Xu81ye3c5F.', 'Pham Tien Dat', '', 'Software Engineering', '', NULL, '2020-07-07 00:35:22', '2020-07-07 00:35:22'),
-(5, 'ncthanh0411@gmail.com', '$2y$10$YooCkAiqzu4s5FFL59scFuPliwCrRD50PapMr6KAaou6jL.Fh9MSC', 'Nguyen Cong thanh', '', 'Software Engineering', '', NULL, '2020-07-07 00:52:12', '2020-07-07 00:52:12'),
+(5, 'ncthanh0411@gmail.com', '$2y$10$YooCkAiqzu4s5FFL59scFuPliwCrRD50PapMr6KAaou6jL.Fh9MSC', 'Nguyen Cong thanh', '', 'Software Engineering', 'Nguyen-Cong-Thanh-TopCV.vn.pdf', NULL, '2020-07-07 00:52:12', '2020-07-11 01:41:09'),
 (6, 'duongiabao69@gmail.com', '$2y$10$RRShf4xCY47BvOVF5Ay1.ewSnqM34MCYJQPPBnAuNq52cLKE80Hfq', 'Nguyen Gia Bao', '', 'Software Engineering', '', NULL, '2020-07-07 01:06:34', '2020-07-07 01:06:34'),
 (7, 'lnktoan1011@gmail.com', '$2y$10$gXEQ/MIODyD5DelLZy8EiuC3mtkmBt4iSRZrdv2DbCAYzE4uD7iZG', 'Le Ngoc Khanh Toan', '', 'Software Engineering', '', NULL, '2020-07-07 01:09:19', '2020-07-07 01:09:19');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -246,31 +245,31 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `admins`
+-- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
--- Chỉ mục cho bảng `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id_cate`);
 
 --
--- Chỉ mục cho bảng `company_users`
+-- Indexes for table `company_users`
 --
 ALTER TABLE `company_users`
   ADD PRIMARY KEY (`id_com`),
   ADD UNIQUE KEY `company_users_email_unique` (`email`);
 
 --
--- Chỉ mục cho bảng `jobs`
+-- Indexes for table `jobs`
 --
 ALTER TABLE `jobs`
   ADD PRIMARY KEY (`id_job`),
@@ -278,7 +277,7 @@ ALTER TABLE `jobs`
   ADD KEY `jobs_categories_id_foreign` (`categories_id`);
 
 --
--- Chỉ mục cho bảng `manage_applies`
+-- Indexes for table `manage_applies`
 --
 ALTER TABLE `manage_applies`
   ADD PRIMARY KEY (`id_apply`),
@@ -286,93 +285,100 @@ ALTER TABLE `manage_applies`
   ADD KEY `manage_applies_student_id_foreign` (`student_id`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Chỉ mục cho bảng `students`
+-- Indexes for table `students`
 --
 ALTER TABLE `students`
   ADD PRIMARY KEY (`id_stu`),
   ADD UNIQUE KEY `students_email_unique` (`email`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `admins`
+-- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id_cate` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `company_users`
+-- AUTO_INCREMENT for table `company_users`
 --
 ALTER TABLE `company_users`
-  MODIFY `id_com` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_com` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `jobs`
+-- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
   MODIFY `id_job` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `manage_applies`
+-- AUTO_INCREMENT for table `manage_applies`
 --
 ALTER TABLE `manage_applies`
-  MODIFY `id_apply` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_apply` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `students`
+-- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
   MODIFY `id_stu` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `jobs`
+-- Constraints for table `jobs`
 --
 ALTER TABLE `jobs`
   ADD CONSTRAINT `jobs_categories_id_foreign` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id_cate`),
   ADD CONSTRAINT `jobs_company_id_foreign` FOREIGN KEY (`company_id`) REFERENCES `company_users` (`id_com`);
+
+--
+-- Constraints for table `manage_applies`
+--
+ALTER TABLE `manage_applies`
+  ADD CONSTRAINT `manage_applies_jobs_id_foreign` FOREIGN KEY (`jobs_id`) REFERENCES `jobs` (`id_job`),
+  ADD CONSTRAINT `manage_applies_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id_stu`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
